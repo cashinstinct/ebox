@@ -309,17 +309,25 @@
       color: var(--accent-dark); padding: 2px 8px; border-radius: 4px;
       font-size: 0.97em; font-weight: 700;
       }
-    .video-wrapper {
-  display: flex;
-  justify-content: center;
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Ratio 16:9 (9 / 16 = 0.5625) */
   margin: 32px 0;
-    }
-    .video-wrapper iframe {
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
-  max-width: 100%;
-    }
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
     figure { margin: 32px 0; }
     figure img { border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); }
     figcaption { margin-top: 10px; color: var(--muted); font-size: 0.94rem; font-weight: 600; text-align: center; }
@@ -453,11 +461,11 @@
 
       <section id="capture">
         <span class="section-label">Preuve visuelle</span>
-        <h2>Où entrer le code pendant l'inscription</h2>
-        <p>Pour vous assurer que vous êtes au bon endroit, voici un mini-tutoriel vidéo qui montre exactement où se trouve le champ pour inscrire le <strong>numéro de client EBOX</strong> de la personne qui vous réfère.</p>
+        <h2>Où entrer le code pendant l'inscription (Tutoriel vidéo)</h2>
+        <p>Voici une démonstration vidéo rapide qui vous montre exactement où se trouve le champ pour inscrire le <strong>numéro de client EBOX</strong> de la personne qui vous réfère. Regardez comment procéder pour valider le code GE911.</p>
         
-        <div class="video-wrapper">
-          <iframe width="815" height="560" src="https://www.youtube.com/embed/KpztV0BXEsg" title="Tutoriel : Où entrer le code client EBOX GE911" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-container">
+          <iframe src="https://www.google.com/search?q=http://www.youtube.com/watch%3Fv%3DKpztV0BXEsg%26t%3D19" title="Tutoriel complet : Où entrer le code client EBOX GE911" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <figure>
