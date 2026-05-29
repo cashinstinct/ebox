@@ -86,7 +86,7 @@
             "name": "Le numéro de client EBOX GE911 fonctionne-t-il encore ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, le code GE911 is 100 % valide et testé en 2026. Cette page est mise à jour régulièrement pour garantir qu'il applique automatiquement le meilleur rabais disponible sur le système d'EBOX (50 $ pour la promo actuelle, ou le crédit régulier de 25 $ hors période promotionnelle)."
+              "text": "Oui, le code GE911 est 100 % valide et testé en 2026. Cette page est mise à jour régulièrement pour garantir qu'il applique automatiquement le meilleur rabais disponible sur le système d'EBOX (50 $ pour la promo actuelle, ou le crédit régulier de 25 $ hors période promotionnelle)."
             }
           },
           {
@@ -139,7 +139,7 @@
       --border: #e2e8f0;
       --border-soft: #cbd5e1;
       --accent: #b0312d;
-      --accent-dark: #1e40af; /* Bleu contrasté WCAG AA pour les liens en mode clair */
+      --accent-dark: #1e40af;
       --warning-bg: #fffbeb;
       --warning-text: #92400e;
       --warning-border: #f59e0b;
@@ -157,7 +157,7 @@
       --border: #2a3442;
       --border-soft: #2f3b4d;
       --accent: #ef4444;
-      --accent-dark: #60a5fa; /* Bleu clair contrasté pour le mode sombre */
+      --accent-dark: #60a5fa;
       --warning-bg: #2a2111;
       --warning-text: #ffd98f;
       --warning-border: #f59e0b;
@@ -175,7 +175,6 @@
     }
     img { max-width: 100%; height: auto; display: block; }
     
-    /* Accessibilité des liens au sein des textes */
     p a { color: var(--accent-dark); text-decoration: underline; font-weight: 600; }
     p a:hover { color: var(--accent); }
 
@@ -314,7 +313,7 @@
       font-size: 0.97em; font-weight: 700;
     }
 
-    /* Optimisation vidéo : Façade de chargement intelligent */
+    /* Façade vidéo YouTube */
     .video-container {
       position: relative;
       width: 100%;
@@ -503,7 +502,7 @@
         <h2>Où entrer le code pendant l'inscription (Tutoriel vidéo)</h2>
         <p>Voici une démonstration vidéo rapide qui vous montre exactement où se trouve le champ pour inscrire le <strong>numéro de client EBOX</strong> de la personne qui vous réfère. Regardez comment procéder pour valider le code GE911.</p>
         
-        <div class="video-container" id="youtube-facade" style="background: url('https://img.youtube.com/vi/KpztV0BXESg/maxresdefault.jpg') center/cover no-repeat; cursor: pointer;">
+        <div class="video-container" id="youtube-facade" style="background: url('https://img.youtube.com/vi/KpztV0BXESg/hqdefault.jpg') center/cover no-repeat; cursor: pointer;">
           <div class="play-button-overlay"></div>
         </div>
 
@@ -522,7 +521,7 @@
 
       <section id="admissibilite" aria-label="Critères d'admissibilité">
         <span class="section-label">Conditions</span>
-        <h2>Who can use the EBOX promo code?</h2>
+        <h2>Qui peut utiliser le code promo EBOX ?</h2>
         <p>Le numéro de client <code>GE911</code> s'adresse à tout <strong>nouveau client résidentiel</strong> qui s'abonne à un forfait Internet EBOX au Québec. Pour que le rabais EBOX de 50 $ soit valide, vous devez impérativement être un nouvel abonné et ne pas avoir eu de compte actif récemment à la même adresse.</p>
         <p><strong>Et si la promotion de 50 $ est terminée ?</strong> Pas de panique. Même après le 31 mai 2026, l'utilisation du code de parrainage <code>GE911</code> vous garantit d'obtenir le crédit de base standard en vigueur (généralement 25 $), appliqué directement sur votre facture.</p>
       </section>
@@ -650,7 +649,6 @@
   </footer>
 
   <script>
-    // Module de copie dans le presse-papier
     async function copyText(text, statusId) {
       const status = document.getElementById(statusId);
       try {
@@ -668,13 +666,11 @@
       });
     });
 
-// Gestion de l'injection dynamique de la vidéo YouTube suite au clic sur la façade de couverture
-document.getElementById("youtube-facade").addEventListener("click", function() {
-  // Correction : Utilisation stricte du format /embed/ pour autoriser la lecture sur ton site
-  this.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/KpztV0BXESg?autoplay=1" title="Tutoriel complet : Où entrer le code client EBOX GE911" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-});
+    // CORRECTION : Injection de l'iframe avec le bon paramètre /embed/ fonctionnel
+    document.getElementById("youtube-facade").addEventListener("click", function() {
+      this.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/KpztV0BXESg?autoplay=1" title="Tutoriel complet : Où entrer le code client EBOX GE911" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+    });
 
-    // Système de bascule Dark / Light Mode
     const themeToggle = document.getElementById("theme-toggle");
     const currentTheme = localStorage.getItem("theme");
 
