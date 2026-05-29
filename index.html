@@ -666,10 +666,11 @@
       });
     });
 
-    // CORRECTION : Injection de l'iframe avec le bon paramètre /embed/ fonctionnel
-    document.getElementById("youtube-facade").addEventListener("click", function() {
-      this.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/KpztV0BXESg?autoplay=1" title="Tutoriel complet : Où entrer le code client EBOX GE911" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-    });
+// Gestion de l'injection dynamique de la vidéo YouTube suite au clic sur la façade de couverture
+document.getElementById("youtube-facade").addEventListener("click", function() {
+  // Version universelle qui fonctionne parfaitement dans l'iframe au clic
+  this.innerHTML = '<iframe src="https://www.youtube.com/embed/KpztV0BXEsg?autoplay=1" title="Tutoriel complet : Où entrer le code client EBOX GE911" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+});
 
     const themeToggle = document.getElementById("theme-toggle");
     const currentTheme = localStorage.getItem("theme");
