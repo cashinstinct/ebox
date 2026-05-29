@@ -314,35 +314,32 @@
     }
 
     /* Intégration du lecteur vidéo natif */
-    .video-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      margin: 32px 0;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
+  .video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Ratio 16:9 (9 / 16 = 0.5625) */
+  margin: 32px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
     .youtube-note {
-      margin: 28px 0 10px;
-      padding: 18px 20px;
-      background: var(--surface-soft);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-    }
-    .youtube-note a { color: var(--accent-dark); text-decoration: underline !important; }
-
+  margin: 28px 0 10px;
+  padding: 18px 20px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
     figure { margin: 32px 0; }
     figure img { border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); margin: 0 auto; }
     figcaption { margin-top: 10px; color: var(--muted); font-size: 0.94rem; font-weight: 600; text-align: center; }
@@ -475,10 +472,10 @@
         <span class="section-label">Preuve visuelle</span>
         <h2>Où entrer le code pendant l'inscription (Tutoriel vidéo)</h2>
         <p>Voici une démonstration vidéo rapide qui vous montre exactement où se trouve le champ pour inscrire le <strong>numéro de client EBOX</strong> de la personne qui vous réfère. Regardez comment procéder pour valider le code GE911.</p>
-        
-     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/KpztV0BXESg" title="Tutoriel complet : Où entrer le code client EBOX GE911" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-      </div>    
+
+       <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/KpztV0BXEsg" title="Tutoriel complet : Où entrer le code client EBOX GE911" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
 
         <div class="youtube-note" aria-label="Lien vers la chaîne YouTube Cashinstinct Hub">
           <p>Cette vidéo montre exactement où entrer GE911 dans le formulaire d’inscription EBOX. Vous pouvez aussi la retrouver sur ma <a href="https://www.youtube.com/embed/KpztV0BXEsg" target="_blank" rel="noopener noreferrer">chaîne YouTube Cashinstinct Hub</a>.</p>
