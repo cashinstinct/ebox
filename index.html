@@ -94,7 +94,7 @@
             "name": "Quelle est la différence entre un code promo EBOX et ce numéro de client ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Ce sont deux cases distinctes dans le formulaire d'inscription. Le code promo EBOX est un mot-clé temporaire pour des campagnes marketing précises. Le numéro de client (GE911) est un code de parrainage permanent. Il faut impérativement inscrire GE911 dans le champ 'Numéro de client EBOX de l'ami qui vous réfère' et non dans la case code promo."
+              "text": "Ce sont deux cases distinctes dans le formulaire d'inscription. Le code promo EBOX est un mot-clé temporaire pour des campagnes marketing précises. Le numéro de client (GE911) is a code de parrainage permanent. Il faut impérativement inscrire GE911 dans le champ 'Numéro de client EBOX de l'ami qui vous réfère' et non dans la case code promo."
             }
           },
           {
@@ -313,7 +313,7 @@
       font-size: 0.97em; font-weight: 700;
     }
 
-    /* Façade vidéo YouTube */
+    /* Intégration du lecteur vidéo natif */
     .video-container {
       position: relative;
       width: 100%;
@@ -323,9 +323,6 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
     .video-container iframe {
       position: absolute;
@@ -334,29 +331,6 @@
       width: 100%;
       height: 100%;
       border: 0;
-    }
-    .play-button-overlay {
-      width: 68px;
-      height: 48px;
-      background-color: rgba(33, 33, 33, 0.8);
-      z-index: 2;
-      border-radius: 12px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: background-color 0.15s;
-    }
-    .video-container:hover .play-button-overlay { background-color: #ff0000; }
-    .play-button-overlay::before {
-      content: "";
-      border-style: solid;
-      border-width: 11px 0 11px 18px;
-      border-color: transparent transparent transparent #fff;
-      position: absolute;
-      top: 50%;
-      left: 55%;
-      transform: translate(-50%, -50%);
     }
 
     .youtube-note {
@@ -380,7 +354,7 @@
       border-radius: 12px;
       padding: 16px;
     }
-    .fact strong { display: block; color: var(--text); margin-bottom: 5px; }
+    .facts strong { display: block; color: var(--text); margin-bottom: 5px; }
     .fact span { display: block; color: var(--text-soft); font-size: 0.96rem; }
 
     .review-box p:last-child { margin-bottom: 0; }
@@ -502,12 +476,12 @@
         <h2>Où entrer le code pendant l'inscription (Tutoriel vidéo)</h2>
         <p>Voici une démonstration vidéo rapide qui vous montre exactement où se trouve le champ pour inscrire le <strong>numéro de client EBOX</strong> de la personne qui vous réfère. Regardez comment procéder pour valider le code GE911.</p>
         
-        <div class="video-container" id="youtube-facade" style="background: url('https://img.youtube.com/vi/KpztV0BXESg/hqdefault.jpg') center/cover no-repeat; cursor: pointer;">
-          <div class="play-button-overlay"></div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/KpztV0BXESg" title="Tutoriel complet : Où entrer le code client EBOX GE911" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <div class="youtube-note" aria-label="Lien vers la chaîne YouTube Cashinstinct Hub">
-          <p>Cette vidéo montre exactement où entrer GE911 dans le formulaire d’inscription EBOX. Vous pouvez aussi la retrouver sur ma <a href="https://www.youtube.com/@cashinstinct_hub" target="_blank" rel="noopener noreferrer">chaîne YouTube Cashinstinct Hub</a>.</p>
+          <p>Cette vidéo montre exactement où entrer GE911 dans le formulaire d’inscription EBOX. Vous pouvez aussi la retrouver sur ma <a href="https://www.youtube.com/embed/KpztV0BXEsg" target="_blank" rel="noopener noreferrer">chaîne YouTube Cashinstinct Hub</a>.</p>
         </div>
 
         <figure>
@@ -665,12 +639,6 @@
         copyText(button.getAttribute("data-copy"), button.getAttribute("data-target"));
       });
     });
-
-// Gestion de l'injection dynamique de la vidéo YouTube suite au clic sur la façade de couverture
-document.getElementById("youtube-facade").addEventListener("click", function() {
-  // Version universelle qui fonctionne parfaitement dans l'iframe au clic
-  this.innerHTML = '<iframe src="https://www.youtube.com/embed/KpztV0BXEsg?autoplay=1" title="Tutoriel complet : Où entrer le code client EBOX GE911" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-});
 
     const themeToggle = document.getElementById("theme-toggle");
     const currentTheme = localStorage.getItem("theme");
