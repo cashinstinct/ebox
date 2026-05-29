@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashinstinct.github.io/ebox-referral-code-2026/" />
   <meta property="og:title" content="Numéro de client EBOX GE911 : où l'entrer et comment obtenir 50 $ de rabais" />
-  <meta property="og:description" content="GE911 donne 50 $ de crédit sur la 2e facture pour les nouveaux clients EBOX. La page explains où entrer le numéro de client, ce que vous verrez à l'écran et quand le rabais s'applique." />
+  <meta property="og:description" content="GE911 donne 50 $ de crédit sur la 2e facture pour les nouveaux clients EBOX. La page explique où entrer le numéro de client, ce que vous verrez à l'écran et quand le rabais s'applique." />
   <meta property="og:locale" content="fr_CA" />
   <meta property="og:site_name" content="Cash Instinct" />
   <meta property="og:image" content="https://cashinstinct.github.io/ebox-referral-code-2026/og.svg" />
@@ -86,7 +86,7 @@
             "name": "Le numéro de client EBOX GE911 fonctionne-t-il encore ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, le code GE911 est 100 % valide et testé en 2026. Cette page est mise à jour régulièrement pour garantir qu'il applique automatiquement le meilleur rabais disponible sur le système d'EBOX (50 $ pour la promo actuelle, ou le crédit régulier de 25 $ hors période promotionnelle)."
+              "text": "Oui, le code GE911 is 100 % valide et testé en 2026. Cette page est mise à jour régulièrement pour garantir qu'il applique automatiquement le meilleur rabais disponible sur le système d'EBOX (50 $ pour la promo actuelle, ou le crédit régulier de 25 $ hors période promotionnelle)."
             }
           },
           {
@@ -139,7 +139,7 @@
       --border: #e2e8f0;
       --border-soft: #cbd5e1;
       --accent: #b0312d;
-      --accent-dark: #8c2623;
+      --accent-dark: #1e40af; /* Bleu contrasté WCAG AA pour les liens en mode clair */
       --warning-bg: #fffbeb;
       --warning-text: #92400e;
       --warning-border: #f59e0b;
@@ -157,7 +157,7 @@
       --border: #2a3442;
       --border-soft: #2f3b4d;
       --accent: #ef4444;
-      --accent-dark: #f87171;
+      --accent-dark: #60a5fa; /* Bleu clair contrasté pour le mode sombre */
       --warning-bg: #2a2111;
       --warning-text: #ffd98f;
       --warning-border: #f59e0b;
@@ -174,8 +174,10 @@
       background: var(--bg);
     }
     img { max-width: 100%; height: auto; display: block; }
-    a { color: var(--accent-dark); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    
+    /* Accessibilité des liens au sein des textes */
+    p a { color: var(--accent-dark); text-decoration: underline; font-weight: 600; }
+    p a:hover { color: var(--accent); }
 
     .container { max-width: 740px; margin: 0 auto; padding: 0 20px; }
 
@@ -199,8 +201,8 @@
     }
     .brand { font-size: 1.05rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
     .nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-    .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; }
-    .nav a:hover, .nav a.active { color: var(--accent); text-decoration: none; }
+    .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; }
+    .nav a:hover, .nav a.active { color: var(--accent); }
 
     .theme-btn {
       background: var(--surface-muted);
@@ -234,7 +236,9 @@
       opacity: 0.95;
       max-width: 620px;
       margin: 0 auto 24px;
+      color: #fff;
     }
+    header.hero p a { color: #fff; text-decoration: underline; }
 
     .code-wrap {
       display: inline-flex;
@@ -308,36 +312,66 @@
       background: color-mix(in srgb, var(--accent) 15%, var(--surface));
       color: var(--accent-dark); padding: 2px 8px; border-radius: 4px;
       font-size: 0.97em; font-weight: 700;
-      }
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* Ratio 16:9 (9 / 16 = 0.5625) */
-  margin: 32px 0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-}
+    }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+    /* Optimisation vidéo : Façade de chargement intelligent */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 32px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .play-button-overlay {
+      width: 68px;
+      height: 48px;
+      background-color: rgba(33, 33, 33, 0.8);
+      z-index: 2;
+      border-radius: 12px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: background-color 0.15s;
+    }
+    .video-container:hover .play-button-overlay { background-color: #ff0000; }
+    .play-button-overlay::before {
+      content: "";
+      border-style: solid;
+      border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+      position: absolute;
+      top: 50%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+    }
+
     .youtube-note {
-  margin: 28px 0 10px;
-  padding: 18px 20px;
-  background: var(--surface-soft);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-}
+      margin: 28px 0 10px;
+      padding: 18px 20px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+    .youtube-note a { color: var(--accent-dark); text-decoration: underline !important; }
+
     figure { margin: 32px 0; }
-    figure img { border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+    figure img { border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); margin: 0 auto; }
     figcaption { margin-top: 10px; color: var(--muted); font-size: 0.94rem; font-weight: 600; text-align: center; }
 
     .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
@@ -351,10 +385,7 @@
     .fact span { display: block; color: var(--text-soft); font-size: 0.96rem; }
 
     .review-box p:last-child { margin-bottom: 0; }
-    .review-box ul {
-      margin: 16px 0 16px 20px;
-      color: var(--text-soft);
-    }
+    .review-box ul { margin: 16px 0 16px 20px; color: var(--text-soft); }
     .review-box li { margin-bottom: 10px; }
 
     .faq { display: grid; gap: 16px; }
@@ -377,8 +408,8 @@
     }
     .cta-section h2 { font-size: 1.6rem; margin-bottom: 12px; color: #fff; }
     .cta-section p { opacity: 0.95; margin-bottom: 24px; font-size: 1.05rem; color: #fff; }
-    .btn { display: inline-block; background: #fff; color: var(--accent); font-weight: 800; font-size: 1.05rem; padding: 14px 36px; border-radius: 8px; transition: opacity 0.15s; }
-    .btn:hover { opacity: 0.88; text-decoration: none; }
+    .btn { display: inline-block; background: #fff; color: var(--accent); font-weight: 800; font-size: 1.05rem; padding: 14px 36px; border-radius: 8px; transition: opacity 0.15s; text-decoration: none; }
+    .btn:hover { opacity: 0.88; }
     .cta-code-row { margin-top: 16px; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
     .cta-code-pill { display: inline-block; background: rgba(255,255,255,0.97); color: var(--accent); font-family: "Courier New", Courier, monospace; font-weight: 900; letter-spacing: 0.04em; padding: 10px 14px; border-radius: 8px; }
     .cta-copy-btn { background: rgba(255,255,255,0.18); color: #fff; padding: 10px 14px; font-size: 0.95rem; }
@@ -428,10 +459,10 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="container">
 
-      <section id="comment-utiliser">
+      <section id="comment-utiliser" aria-label="Instructions d'utilisation">
         <span class="section-label">Tutoriel rapide</span>
         <h2>Comment utiliser le numéro de client GE911</h2>
 
@@ -467,33 +498,36 @@
         </ol>
       </section>
 
-      <section id="capture">
+      <section id="capture" aria-label="Tutoriel vidéo et preuves visuelles">
         <span class="section-label">Preuve visuelle</span>
         <h2>Où entrer le code pendant l'inscription (Tutoriel vidéo)</h2>
         <p>Voici une démonstration vidéo rapide qui vous montre exactement où se trouve le champ pour inscrire le <strong>numéro de client EBOX</strong> de la personne qui vous réfère. Regardez comment procéder pour valider le code GE911.</p>
         
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/KpztV0BXEsg" title="Tutoriel complet : Où entrer le code client EBOX GE911" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="video-container" id="youtube-facade" style="background: url('https://img.youtube.com/vi/KpztV0BXESg/maxresdefault.jpg') center/cover no-repeat; cursor: pointer;">
+          <div class="play-button-overlay"></div>
         </div>
 
-      <div class="youtube-note" aria-label="Lien vers la chaîne YouTube Cashinstinct Hub">
-      <p>Cette vidéo montre exactement où entrer GE911 dans le formulaire d’inscription EBOX. Vous pouvez aussi la retrouver sur ma <a href="https://www.youtube.com/@cashinstinct_hub" target="_blank" rel="noopener noreferrer">chaîne YouTube Cashinstinct Hub</a>.</p>
-      </div>
+        <div class="youtube-note" aria-label="Lien vers la chaîne YouTube Cashinstinct Hub">
+          <p>Cette vidéo montre exactement où entrer GE911 dans le formulaire d’inscription EBOX. Vous pouvez aussi la retrouver sur ma <a href="https://www.youtube.com/@cashinstinct_hub" target="_blank" rel="noopener noreferrer">chaîne YouTube Cashinstinct Hub</a>.</p>
+        </div>
 
         <figure>
-          <img src="validation-code-ebox-ge911_50-FR.png" alt="Capture du champ EBOX pour inscrire le numéro de client GE911 avec message de validation" loading="lazy" width="1080" height="608">
+          <picture>
+            <source srcset="validation-code-ebox-ge911_50-FR.webp" type="image/webp">
+            <img src="validation-code-ebox-ge911_50-FR.png" alt="Capture du champ EBOX pour inscrire le numéro de client GE911 avec message de validation" loading="lazy" width="648" height="202">
+          </picture>
           <figcaption>Le champ d'inscription EBOX où entrer le numéro de client GE911 et la confirmation de validation du système.</figcaption>
         </figure>
       </section>
 
-      <section id="admissibilite">
+      <section id="admissibilite" aria-label="Critères d'admissibilité">
         <span class="section-label">Conditions</span>
-        <h2>Qui peut utiliser le code promo EBOX ?</h2>
+        <h2>Who can use the EBOX promo code?</h2>
         <p>Le numéro de client <code>GE911</code> s'adresse à tout <strong>nouveau client résidentiel</strong> qui s'abonne à un forfait Internet EBOX au Québec. Pour que le rabais EBOX de 50 $ soit valide, vous devez impérativement être un nouvel abonné et ne pas avoir eu de compte actif récemment à la même adresse.</p>
         <p><strong>Et si la promotion de 50 $ est terminée ?</strong> Pas de panique. Même après le 31 mai 2026, l'utilisation du code de parrainage <code>GE911</code> vous garantit d'obtenir le crédit de base standard en vigueur (généralement 25 $), appliqué directement sur votre facture.</p>
       </section>
       
-      <section id="details">
+      <section id="details" aria-label="Informations techniques rapides">
         <span class="section-label">En bref</span>
         <h2>Informations utiles sur EBOX</h2>
         <div class="facts">
@@ -516,7 +550,7 @@
         </div>
       </section>
 
-      <section id="review">
+      <section id="review" aria-label="Avis personnel">
         <span class="section-label">Mon expérience</span>
         <h2>Mon avis sur EBOX</h2>
         <div class="review-box">
@@ -529,12 +563,12 @@
           </ul>
           <p>Si vous cherchez un fournisseur Internet simple, fiable et facile à recommander autour de vous, EBOX est une option que je trouve vraiment solide d’après ma propre expérience.</p>
           <p style="margin-top: 20px; font-size: 0.95rem; border-top: 1px dashed var(--border); padding-top: 15px;">
-            💡 En pleine optimisation de vos dépenses résidentielles ? Découvrez aussi mes guides et codes pour optimiser vos forfaits avec <a href="https://cashinstinct.github.io/stickermule/" style="text-decoration: underline;">Sticker Mule</a> ou pour vos comptes avec <a href="https://cashinstinct.github.io/tangerine-orange-key/" style="text-decoration: underline;">Tangerine</a>.
+            💡 En pleine optimisation de vos dépenses résidentielles ? Découvrez aussi mes guides et codes pour optimiser vos forfaits avec <a href="https://cashinstinct.github.io/stickermule/">Sticker Mule</a> ou pour vos comptes avec <a href="https://cashinstinct.github.io/tangerine-orange-key/">Tangerine</a>.
           </p>
         </div>
       </section>
 
-      <section id="faq">
+      <section id="faq" aria-label="Foire aux questions">
         <span class="section-label">Questions fréquentes</span>
         <h2>Foire aux questions</h2>
         <div class="faq">
@@ -616,6 +650,7 @@
   </footer>
 
   <script>
+    // Module de copie dans le presse-papier
     async function copyText(text, statusId) {
       const status = document.getElementById(statusId);
       try {
@@ -633,6 +668,12 @@
       });
     });
 
+    // Gestion de l'injection dynamique de la vidéo YouTube suite au clic sur la façade de couverture
+    document.getElementById("youtube-facade").addEventListener("click", function() {
+      this.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/KpztV0BXESg?autoplay=1" title="Tutoriel complet : Où entrer le code client EBOX GE911" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+    });
+
+    // Système de bascule Dark / Light Mode
     const themeToggle = document.getElementById("theme-toggle");
     const currentTheme = localStorage.getItem("theme");
 
