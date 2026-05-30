@@ -1,15 +1,15 @@
-# 🇨🇦 EBOX Promo Code 2026 / Code Promo EBOX 2026: Get $50 Off until May 31, 2026 (Code: ge911)
+# 🇨🇦 EBOX Client Code 2026 / Code Client EBOX 2026: Get $25 Off (Code: GE911)
 
 *(Le français suit l'anglais ci-dessous)*
 
-Looking for a valid EBOX referral code for 2026? Use the verified client code **GE911** to instantly unlock a $50 credit until May 31, 2026 (double $25) on your new EBOX internet subscription. This offer is available for new customers in both Quebec and Ontario.
+Looking for a valid EBOX referral code for 2026? Use the verified client code **GE911** to instantly unlock a $25 credit on your new EBOX internet subscription. This offer is available for new customers in both Quebec and Ontario.
 
 ## 💡 How to claim your $25 EBOX bonus:
-Using an EBOX referral code during your initial sign-up is the **only** way to get this bonus. **Important:** EBOX does not allow you to add a referral code retroactively once your order is processed.
+Using an EBOX referral code during your initial sign-up is the **best** way to get this bonus. **Important:** EBOX typically does not allow you to add a referral code retroactively once your order is processed.
 
 1. **Copy the code:** `GE911`
 2. **Visit EBOX:** Go to ebox.ca or call their sales team at 1-844-323-EBOX (3269).
-3. **Select your plan:** Pick any qualifying internet plan (Fiber, Cable, or FTTN). Currently, EBOX offers highly competitive rates like 500 Mbps for $50/month or 1 Gbps for $55/month (rates vary).
+3. **Select your plan:** Pick any qualifying internet plan (Fiber or FTTN). Currently, EBOX offers highly competitive rates like 500 Mbps for $50/month or 1 Gbps for $55/month (rates vary).
 4. **Apply at checkout:** During the final order summary online, or while on the phone with the agent, provide the client code `GE911`.
 5. **Enjoy your discount:** Your $50 credit will automatically be applied to your second monthly bill.
 
@@ -21,18 +21,18 @@ Using an EBOX referral code during your initial sign-up is the **only** way to g
 
 ---
 
-# 🇨🇦 Code Promo EBOX 2026 : Obtenez 25$ de Rabais (Code : ge911)
+# 🇨🇦 Code Client EBOX 2026 : Obtenez 25$ de Rabais (Code : GE911)
 
-Vous cherchez un code de référence EBOX valide en 2026? Utilisez le code client vérifié **GE911** pour débloquer instantanément un crédit de 50$ jusqu'au 31 mai 2026 (normalement 25$) sur votre nouvel abonnement internet EBOX. Cette offre est valide pour les nouveaux clients résidant au Québec et en Ontario.
+Vous cherchez un code de référence EBOX valide en 2026? Utilisez le code client vérifié **GE911** pour débloquer instantanément un crédit de 25$ sur votre nouvel abonnement internet EBOX. Cette offre est valide pour les nouveaux clients résidant au Québec et en Ontario.
 
-## 💡 Comment réclamer votre prime EBOX de 50$ :
+## 💡 Comment réclamer votre prime EBOX de 25$ :
 L'utilisation d'un code de parrainage lors de votre inscription initiale est la **seule** façon d'obtenir ce bonus. **Attention :** EBOX n'autorise pas l'ajout rétroactif d'un code de référence une fois la commande validée!
 
-1. **Copiez le code :** `ge911`
+1. **Copiez le code client :** `GE911`
 2. **Visitez EBOX :** Allez sur ebox.ca ou appelez l'équipe des ventes au 1-844-323-EBOX (3269).
 3. **Choisissez votre forfait :** Sélectionnez votre forfait internet. EBOX offre actuellement des tarifs très agressifs, comme 500 Mbit/s pour 50$/mois ou 1 Gbit/s pour 55$/mois
 4. **Appliquez au paiement :** Lors de la finalisation de la commande en ligne, ou au téléphone avec l'agent, fournissez le code client `GE911`.
-5. **Profitez du rabais :** Votre crédit de 50$ sera appliqué automatiquement sur votre deuxième facture mensuelle.
+5. **Profitez du rabais :** Votre crédit de 25$ sera appliqué automatiquement sur votre deuxième facture mensuelle.
 
 ## 🚀 Pourquoi choisir EBOX en 2026?
 * **Le réseau 100% Fibre de Bell :** EBOX appartient à Bell Canada. Vous profitez exactement des mêmes lignes de fibre optique (FTTH) et de la même stabilité, mais à une fraction du prix.
@@ -47,5 +47,5 @@ L'utilisation d'un code de parrainage lors de votre inscription initiale est la 
 
 <details>
 <summary>Search Tags / Mots-clés de recherche</summary>
-ebox promo code, ebox referral code, code promo ebox, code de reference ebox, ebox rabais, ebox reddit, ebox 25$, ebox 50$, ebox promo code 2026, code client ebox, ebox coupon, meilleur fournisseur internet quebec, best internet provider ontario, bell fibre alternative.
+ebox promo code, ebox referral code, code promo ebox, code de reference ebox, ebox rabais, ebox reddit, ebox 25$, ebox 50$, ebox promo code 2026, code client ebox, ebox client code, ebox coupon, meilleur fournisseur internet quebec, best internet provider ontario, bell fibre alternative.
 </details>
