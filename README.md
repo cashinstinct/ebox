@@ -10,8 +10,8 @@ Using an EBOX referral code during your initial sign-up is the **best** way to g
 1. **Copy the code:** `GE911`
 2. **Visit EBOX:** Go to ebox.ca or call their sales team at 1-844-323-EBOX (3269).
 3. **Select your plan:** Pick any qualifying internet plan (Fiber or FTTN). Currently, EBOX offers highly competitive rates like 500 Mbps for $50/month or 1 Gbps for $55/month (rates vary).
-4. **Apply at checkout:** During the final order summary online, or while on the phone with the agent, provide the client code `GE911`.
-5. **Enjoy your discount:** Your $50 credit will automatically be applied to your second monthly bill.
+4. **Apply at checkout:** During the order, or while on the phone with the agent, provide the client code `GE911`
+5. **Enjoy your discount:** Your $25 credit will automatically be applied to your second monthly bill.
 
 ## 🚀 Why choose EBOX in 2026?
 * **Bell's Fiber Network:** EBOX is a subsidiary of Bell Canada. You get the exact same 100% pure FTTH (Fiber to the Home) lines and reliability, but at a fraction of the cost.
@@ -31,7 +31,7 @@ L'utilisation d'un code de parrainage lors de votre inscription initiale est la 
 1. **Copiez le code client :** `GE911`
 2. **Visitez EBOX :** Allez sur ebox.ca ou appelez l'équipe des ventes au 1-844-323-EBOX (3269).
 3. **Choisissez votre forfait :** Sélectionnez votre forfait internet. EBOX offre actuellement des tarifs très agressifs, comme 500 Mbit/s pour 50$/mois ou 1 Gbit/s pour 55$/mois
-4. **Appliquez au paiement :** Lors de la finalisation de la commande en ligne, ou au téléphone avec l'agent, fournissez le code client `GE911`.
+4. **Appliquez au paiement :** Lors de la commande en ligne, ou au téléphone avec l'agent, fournissez le code client de l'ami qui vous réfère `GE911`.
 5. **Profitez du rabais :** Votre crédit de 25$ sera appliqué automatiquement sur votre deuxième facture mensuelle.
 
 ## 🚀 Pourquoi choisir EBOX en 2026?
