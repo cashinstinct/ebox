@@ -36,6 +36,15 @@
         "dateModified": "2026-06-01"
       },
       {
+        "@type": "BreadcrumbList",
+        "@id": "https://cashinstinct.github.io/ebox-referral-code-2026/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cashinstinct.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Internet", "item": "https://cashinstinct.github.io/#internet" },
+          { "@type": "ListItem", "position": 3, "name": "EBOX", "item": "https://cashinstinct.github.io/ebox-referral-code-2026/" }
+        ]
+      },
+      {
         "@type": "Product",
         "name": "Internet résidentiel EBOX",
         "brand": {
@@ -94,7 +103,7 @@
             "name": "Le code client EBOX GE911 fonctionne-t-il encore ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui, le code GE911 est 100 % valide et testé en 2026. Cette page est mise à jour régulièrement pour garantir qu'il applique automatiquement le rabais de 25 $ disponible sur le système d'EBOX."
+              "text": "Oui, le code GE911 est 100 % valide et testé en 2026. Cette page is mise à jour régulièrement pour garantir qu'il applique automatiquement le rabais de 25 $ disponible sur le système d'EBOX."
             }
           },
           {
@@ -167,10 +176,11 @@
     }
     img { max-width: 100%; height: auto; display: block; }
     
-    p a { color: var(--accent-dark); text-decoration: underline; font-weight: 600; }
-    p a:hover { color: var(--accent); }
+    a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
 
-    .container { max-width: 740px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .prose { max-width: 900px; margin: 0 auto; }
 
     .topbar {
       background: var(--surface);
@@ -210,61 +220,121 @@
     }
     .theme-btn:hover { background: var(--border-soft); }
 
+    .breadcrumb {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+    .breadcrumb a { color: var(--muted); font-weight: 500; }
+    .breadcrumb span { margin: 0 6px; }
+
     header.hero {
       background: linear-gradient(135deg, var(--accent) 0%, #7a1d1a 100%);
       color: #fff;
-      padding: 56px 20px 48px;
+      padding: 64px 20px;
       text-align: center;
     }
     header.hero h1 {
-      font-size: clamp(1.7rem, 4vw, 2.4rem);
-      font-weight: 800;
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      font-weight: 900;
       line-height: 1.2;
       margin-bottom: 16px;
     }
     header.hero p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       opacity: 0.95;
       max-width: 620px;
-      margin: 0 auto 24px;
+      margin: 0 auto 28px;
       color: #fff;
     }
-    header.hero p a { color: #fff; text-decoration: underline; }
 
-    .code-wrap {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      background: rgba(255, 255, 255, 0.98);
-      padding: 12px 14px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      margin-bottom: 14px;
+    /* ==========================================================================
+       1. GRILLE RESPONSIVE SÉMANTIQUE EN 2 COLONNES
+       ========================================================================== */
+    .hero-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 28px auto 0;
+      width: 100%;
+      max-width: 560px;
     }
-    .code-hero {
-      display: inline-block;
-      color: var(--accent);
-      font-family: "Courier New", Courier, monospace;
-      font-size: 2rem;
-      font-weight: 900;
-      letter-spacing: 0.06em;
-      padding: 6px 10px;
-      border-radius: 10px;
+
+    .hero-methods > div {
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
+
+    .hero-methods a img {
+      transition: opacity 0.15s ease;
+    }
+    .hero-methods a:hover img {
+      opacity: 0.9;
+    }
+
+    .hero-methods p {
+      color: var(--text-soft) !important;
+      font-size: 0.85rem;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .hero-methods {
+        flex-direction: row;
+        max-width: 1100px;
+        gap: 32px;
+        align-items: stretch;
+      }
+      .hero-methods > div {
+        flex: 1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .input-copy-group {
+        flex-direction: column;
+        background: transparent !important;
+        border: none !important;
+        gap: 8px;
+        padding: 0 !important;
+      }
+      .input-copy-group input[type="text"] {
+        background: var(--surface-soft) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 8px !important;
+        width: 100% !important;
+      }
+      .input-copy-group .copy-btn {
+        width: 100% !important;
+        padding: 12px 16px !important;
+        border-radius: 8px !important;
+        border-left: none !important;
+        justify-content: center;
+      }
+      .hero-methods > div {
+        padding: 20px 16px !important;
+      }
+    }
+
+    /* Mode Sombre pour le texte sous images */
+    [data-theme="dark"] .hero-methods p {
+      color: var(--text-soft) !important;
+    }
+
+    /* ==========================================================================
+       2. RESTE DU STYLE STABLE ET CORRIGÉ
+       ========================================================================== */
     .copy-btn, .cta-copy-btn {
       appearance: none; border: 0; cursor: pointer;
-      font-weight: 800; border-radius: 10px;
-      transition: transform 0.15s ease, opacity 0.15s ease;
+      font-weight: 800; border-radius: 6px;
+      transition: background 0.15s ease, color 0.15s ease;
     }
-    .copy-btn:hover, .cta-copy-btn:hover { opacity: 0.92; transform: translateY(-1px); }
-    .copy-btn { background: var(--accent); color: #fff; font-size: 0.95rem; padding: 12px 16px; }
-
-    .copy-status {
-      display: block; font-size: 0.92rem; min-height: 1.2em;
-      opacity: 0.95; font-weight: 700; margin-top: 6px;
-    }
+    .copy-btn { background: var(--surface-muted); border-left: 1px solid var(--border); color: var(--accent); font-size: 0.95rem; padding: 0 20px; white-space: nowrap; }
 
     main { padding: 52px 0; }
     section { margin-bottom: 56px; }
@@ -282,8 +352,20 @@
     }
 
     .section-label {
-      display: block; text-transform: uppercase; font-size: 0.75rem;
-      font-weight: 700; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 8px;
+      display: inline-block; 
+      text-transform: uppercase; 
+      font-size: 0.75rem; 
+      font-weight: 700; 
+      letter-spacing: 0.12em; 
+      color: #962521;
+      background: rgba(176, 49, 45, 0.08);
+      padding: 4px 12px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    [data-theme="dark"] .section-label {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.15);
     }
 
     .steps { list-style: none; counter-reset: steps; }
@@ -300,14 +382,10 @@
 
     code {
       font-family: "Courier New", Courier, monospace;
-      background: color-mix(in srgb, var(--accent) 15%, var(--surface));
-      color: var(--accent-dark); padding: 2px 8px; border-radius: 4px;
-      font-size: 0.97em; font-weight: 700;
+      background: var(--surface-soft);
+      color: var(--text); padding: 2px 8px; border-radius: 4px;
+      font-size: 0.97em; font-weight: 700; border: 1px solid var(--border);
     }
-    
-    figure { margin: 32px 0; }
-    figure img { border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); margin: 0 auto; }
-    figcaption { margin-top: 10px; color: var(--muted); font-size: 0.94rem; font-weight: 600; text-align: center; }
 
     .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
     .fact, .review-box {
@@ -367,11 +445,12 @@
     footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
 
     @media (max-width: 640px) {
-      .code-hero { font-size: 1.5rem; }
-      .topbar-inner { align-items: flex-start; }
+      .topbar-inner { padding: 14px 20px; }
       .nav { gap: 12px; }
-      .code-wrap { flex-direction: column; }
       .facts { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 768px) {
+      body { font-size: 19px; }
     }
   </style>
 </head>
@@ -383,7 +462,7 @@
       <div class="nav">
         <a href="https://cashinstinct.github.io/">Accueil</a>
         <a class="active" href="https://cashinstinct.github.io/ebox-referral-code-2026/">EBOX</a>
-        <a href="https://cashinstinct.github.io/stickermule/">Sticker Mule</a>
+        <a href="https://cashinstinct.github.io/stickermule/fr/">Sticker Mule</a>
         <a href="https://cashinstinct.github.io/tangerine-orange-key/">Tangerine</a>
         <button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
       </div>
@@ -392,189 +471,214 @@
 
   <header class="hero">
     <div class="container">
-      <h1>Code client EBOX GE911 en 2026</h1>
-      <p>Si vous cherchez un <strong>code de parrainage</strong> ou un <strong>numéro de client EBOX</strong> pour économiser sur votre abonnement, entrez le code client <strong>GE911</strong> à l'inscription. Vous obtiendrez <strong>25 $ de crédit</strong> sur votre 2e facture.</p>
-      <div class="code-wrap">
-        <div class="code-hero">GE911</div>
-        <button class="copy-btn" data-copy="GE911" data-target="copyStatusHero">Copier le code</button>
-      </div>
-      <span class="copy-status" id="copyStatusHero" role="status" aria-atomic="true" aria-live="polite"></span>
+      <h1>Code client EBOX en 2026 : 25 $ de rabais</h1>
+      <p>Si vous cherchez un <strong>code de parrainage</strong> ou un <strong>numéro de client EBOX</strong> pour économiser sur votre forfait Internet, voici deux méthodes simples d'activation.</p>
+      
+      <div class="hero-methods">
+        
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow);">
+          <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 12px;">
+            ① Étape 1 — Copier le code client
+          </p>
+          
+          <div class="input-copy-group" style="display: flex; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: auto; margin-bottom: auto; padding: 4px;">
+            <input type="text" value="GE911" id="promo-code" readonly aria-readonly="true" aria-label="Numéro de client EBOX" style="flex: 1; border: none; padding: 12px 16px; font-family: monospace; font-size: 1.1rem; font-weight: 700; color: var(--text); background: transparent; text-align: center;" />
+            <button id="copy-btn" class="copy-btn" data-copy="GE911" data-target="copyStatusHero" type="button" style="background: var(--text); color: var(--surface); border: none; border-radius: 6px; font-weight: 700; padding: 0 20px; cursor: pointer; font-size: 0.95rem; white-space: nowrap;">Copier le code</button>
+          </div>
+          <span id="copyStatusHero" role="status" aria-atomic="true" aria-live="polite" style="display: none;"></span>
 
-      <p style="font-size:0.92rem; opacity:0.85;">⚠️ À saisir pendant l'inscription — ne peut généralement pas être ajouté après coup</p>
+          <p style="font-size: 0.85rem; margin-top: auto; text-align: center;">
+            Sauvegardez l'identifiant pour le coller dans le champ de parrainage de l'ami.
+          </p>
+        </div>
+
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow);">
+          <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px;">
+            ② Étape 2 — Validation du système EBOX
+          </p>
+          
+          <a href="https://www.ebox.ca/" target="_blank" rel="noopener noreferrer" style="display: block; margin-top: auto;">
+            <picture>
+              <source srcset="validation-code-ebox-ge911_FR.webp" type="image/webp">
+              <img src="validation-code-ebox-ge911_FR.png" alt="Champ d'inscription EBOX affichant le code de parrainage client GE911 validé par le système" width="1440" height="420" style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
+            </picture>
+          </a>
+          
+          <p style="font-size: 0.85rem; margin-top: 8px; text-align: center;">
+            <a href="https://www.ebox.ca/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 700;">Ouvrez le site officiel d'EBOX</a> et entrez-le dans le champ illustré.
+          </p>
+        </div>
+
+      </div>
+
+      <p style="font-size:0.92rem; opacity:0.85; margin-top: 20px; margin-bottom: 0;">⚠️ À saisir pendant l'inscription — ne peut généralement pas être ajouté après coup</p>
     </div>
   </header>
 
   <main id="main-content">
     <div class="container">
+      <div class="prose">
 
-      <section id="comment-utiliser" aria-label="Instructions d'utilisation">
-        <span class="section-label">Tutoriel rapide</span>
-        <h2>Comment utiliser le code client GE911</h2>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="https://cashinstinct.github.io/">Accueil</a><span>&gt;</span>
+          <a href="https://cashinstinct.github.io/#internet">Internet</a><span>&gt;</span>
+          EBOX
+        </nav>
 
-        <div class="warning">
-          ⚠️ <strong>Règle importante :</strong> le code client EBOX doit être entré au moment de la commande initiale. Le service client d'EBOX n'autorise généralement pas l'ajout d'une référence une fois le compte créé.
-        </div>
+        <section id="comment-utiliser" aria-label="Instructions d'utilisation">
+          <span class="section-label">Tutoriel rapide</span>
+          <h2>Comment utiliser le code client GE911</h2>
 
-        <ol class="steps">
-          <li>
-            <div>
-              <h3>Choisissez votre forfait Internet EBOX</h3>
-              <p>Rendez-vous sur le site d'EBOX et sélectionnez le forfait qui vous convient. EBOX propose des forfaits Internet résidentiels selon votre adresse et la technologie disponible.</p>
-            </div>
-          </li>
-           <li>
-            <div>
-              <h3>Entrez le code client GE911</h3>
-              <p>Au moment de remplir le formulaire de commande, repérez spécifiquement le champ qui vous demande le <strong>numéro de client EBOX de l'ami qui te réfère</strong> et saisissez <code>GE911</code>. Attention à ne pas le confondre avec la case pour les codes promos généraux.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Vérifiez la validation à l'écran</h3>
-              <p>Le système d'EBOX affichera immédiatement un message indiquant que le code inscrit est valide. Assurez-vous de voir cette confirmation avant de payer.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Obtenez 25 $ de rabais</h3>
-              <p>Complétez votre abonnement. Le crédit de 25 $ sera appliqué automatiquement sur votre <strong>deuxième facture</strong>.</p>
-            </div>
-          </li>
-        </ol>
-      </section>
-
-    
-           <section id="capture" aria-label="Où entrer le code">
-        <span class="section-label">Preuve visuelle</span>
-        <h2>Code client EBOX : où l'entrer ?</h2>
-        <p>Si vous vous demandez où l'entrer exactement, voici une capture du champ d'inscription pour inscrire le <strong>code client EBOX</strong> de la personne qui vous réfère.</p>
-
-        <figure>
-          <picture>
-            <source srcset="validation-code-ebox-ge911_FR.webp" type="image/webp">
-            <img src="validation-code-ebox-ge911_FR.png" alt="Capture du champ EBOX pour inscrire le code client GE911 avec message de validation à 25 $" loading="lazy" width="1440" height="420">
-          </picture>
-          <figcaption>Le champ d'inscription EBOX où entrer le code client GE911 et la confirmation de validation du système.</figcaption>
-        </figure>
-      </section>
-
-      <section id="admissibilite" aria-label="Critères d'admissibilité">
-        <span class="section-label">Conditions</span>
-        <h2>Qui peut utiliser le code de parrainage EBOX ?</h2>
-        <p>Le numéro de client <code>GE911</code> s'adresse à tout <strong>nouveau client résidentiel</strong> qui s'abonne à un forfait Internet EBOX au Québec. Pour que le rabais EBOX de 25 $ soit valide, vous devez impérativement être un nouvel abonné et ne pas avoir eu de compte actif récemment à la même adresse.</p>
-      </section>
-      
-      <section id="details" aria-label="Informations techniques rapides">
-        <span class="section-label">En bref</span>
-        <h2>Informations utiles sur EBOX</h2>
-        <div class="facts">
-          <div class="fact">
-            <strong>Moment d'application</strong>
-            <span>Le rabais est crédité sur la 2e facture.</span>
+          <div class="warning">
+            ⚠️ <strong>Règle importante :</strong> le code client EBOX doit être entré au moment de la commande initiale. Le service client d'EBOX n'autorise généralement pas l'ajout d'une référence une fois le compte créé.
           </div>
-          <div class="fact">
-            <strong>Validité</strong>
-            <span>Le code GE911 est permanent et actif en 2026.</span>
-          </div>
-          <div class="fact">
-            <strong>Type de service</strong>
-            <span>Internet résidentiel selon votre adresse au Québec.</span>
-          </div>
-          <div class="fact">
-            <strong>Fonctionnement</strong>
-            <span>Vous obtenez 25 $ de crédit, et la personne qui vous réfère reçoit aussi un crédit.</span>
-          </div>
-        </div>
-      </section>
 
-      <section id="review" aria-label="Avis personnel">
-        <span class="section-label">Mon expérience</span>
-        <h2>Mon avis sur EBOX</h2>
-        <div class="review-box">
-          <p>Depuis que je suis chez EBOX, mon expérience est très positive. Je n’ai pas eu d’erreur de facturation, la connexion a été très stable au quotidien, et mon suivi montre très peu de déconnexions visibles.</p>
-          <p>Ce que j’apprécie particulièrement :</p>
-          <ul>
-            <li><strong>Fiabilité du réseau :</strong> les interruptions ont été rares dans mon cas.</li>
-            <li><strong>Facturation simple :</strong> je n’ai pas eu de mauvaise surprise ou d’erreur de facturation.</li>
-            <li><strong>Meilleure impression globale :</strong> à titre personnel, EBOX m’a donné une meilleure impression de stabilité que mon expérience passée avec Vidéotron.</li>
-          </ul>
-          <p>Si vous cherchez un fournisseur Internet simple, fiable et facile à recommander autour de vous, EBOX est une option que je trouve vraiment solide d’après ma propre expérience.</p>
-          <p style="margin-top: 20px; font-size: 0.95rem; border-top: 1px dashed var(--border); padding-top: 15px;">
-            💡 En pleine optimisation de vos dépenses résidentielles ? Découvrez aussi mes guides et codes pour optimiser vos forfaits avec <a href="https://cashinstinct.github.io/stickermule/">Sticker Mule</a> ou pour vos comptes avec <a href="https://cashinstinct.github.io/tangerine-orange-key/">Tangerine</a>.
-          </p>
-        </div>
-      </section>
-      
-      <section id="english-summary" class="english-block" aria-label="English Summary">
-        <h2>English Summary: EBOX Referral Code</h2>
-        <p>Searching for an <strong>EBOX referral code</strong> or <strong>EBOX client code</strong>? Use <code>GE911</code> during your checkout to get a <strong>$25 credit</strong> on your second bill. Make sure to enter it in the "Friend's EBOX client number" field. This referral code is active and tested for 2026.</p>
-      </section>
+          <ol class="steps">
+            <li>
+              <div>
+                <h3>Choisissez votre forfait Internet EBOX</h3>
+                <p>Rendez-vous sur le site d'EBOX et sélectionnez le forfait qui vous convient. EBOX propose des forfaits Internet résidentiels selon votre adresse et la technologie disponible.</p>
+              </div>
+            </li>
+             <li>
+              <div>
+                <h3>Entrez le code client GE911</h3>
+                <p>Au moment de remplir le formulaire de commande, repérez spécifiquement le champ qui vous demande le <strong>numéro de client EBOX de l'ami qui te réfère</strong> et saisissez <code>GE911</code>. Attention à ne pas le confondre avec la case pour les codes promos généraux.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Vérifiez la validation à l'écran</h3>
+                <p>Le système d'EBOX affichera immédiatement un message indiquant que le code inscrit est valide. Assurez-vous de voir cette confirmation avant de payer.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Obtenez 25 $ de rabais</h3>
+                <p>Complétez votre abonnement. Le crédit de 25 $ sera appliqué automatiquement sur votre <strong>deuxième facture</strong>.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
 
-      <section id="faq" aria-label="Foire aux questions">
-        <span class="section-label">Questions fréquentes</span>
-        <h2>Foire aux questions</h2>
-        <div class="faq">
-          <details>
-            <summary>Quel est le code client EBOX à utiliser en 2026 ?</summary>
-            <div class="faq-body">
-              <p>Le code client (numéro de client) à utiliser est <strong>GE911</strong>. Il donne 25 $ de crédit sur la 2e facture pour tout nouvel abonné admissible.</p>
+        <section id="admissibilite" aria-label="Critères d'admissibilité">
+          <span class="section-label">Conditions</span>
+          <h2>Qui peut utiliser le code de parrainage EBOX ?</h2>
+          <p>Le numéro de client <code>GE911</code> s'adresse à tout <strong>nouveau client résidentiel</strong> qui s'abonne à un forfait Internet EBOX au Québec. Pour que le rabais EBOX de 25 $ soit valide, vous devez impérativement être un nouvel abonné et ne pas avoir eu de compte actif récemment à la même adresse.</p>
+        </section>
+        
+        <section id="details" aria-label="Informations techniques rapides">
+          <span class="section-label">En bref</span>
+          <h2>Informations utiles sur EBOX</h2>
+          <div class="facts">
+            <div class="fact">
+              <strong>Moment d'application</strong>
+              <span>Le rabais est crédité sur la 2e facture.</span>
             </div>
-          </details>
-          <details>
-            <summary>Le rabais EBOX était-il de 50 $ avant ?</summary>
-            <div class="faq-body">
-              <p>Oui, EBOX offrait temporairement un crédit de 50 $ en promotion. Depuis <strong>juin 2026</strong>, le rabais de parrainage standard est revenu à 25 $ avec le code GE911. Contrairement à de vieux posts sur les forums, cette page vous donne le montant exact actuellement en vigueur.</p>
+            <div class="fact">
+              <strong>Validité</strong>
+              <span>Le code GE911 est permanent et actif en 2026.</span>
             </div>
-          </details>
-          <details>
-            <summary>Où faut-il entrer le code client EBOX GE911 ?</summary>
-            <div class="faq-body">
-              <p>Il faut entrer GE911 dans le champ affiché pendant l'inscription pour inscrire le numéro de client EBOX de la personne qui vous réfère.</p>
+            <div class="fact">
+              <strong>Type de service</strong>
+              <span>Internet résidentiel selon votre adresse au Québec.</span>
             </div>
-          </details>
-          <details>
-            <summary>Peut-on ajouter le numéro de client EBOX après l'inscription ?</summary>
-            <div class="faq-body">
-              <p>En général, non. Il faut impérativement l'ajouter au moment de la commande initiale pour que le système valide la référence.</p>
+            <div class="fact">
+              <strong>Fonctionnement</strong>
+              <span>Vous obtenez 25 $ de crédit, et la personne qui vous réfère reçoit aussi un crédit.</span>
             </div>
-          </details>
-          <details>
-            <summary>Le code client EBOX et le code de référence, est-ce la même chose ?</summary>
-            <div class="faq-body">
-              <p>Dans la pratique, beaucoup de gens parlent d'un code de référence EBOX. Sur l'écran d'inscription, EBOX demande surtout le <strong>numéro de client</strong> de la personne qui vous réfère. Ici, ce numéro est <code>GE911</code>.</p>
-            </div>
-          </details>
-           <details>
-            <summary>Quelle est la différence entre un code promo EBOX et ce code client ?</summary>
-            <div class="faq-body">
-              <p>Ce sont deux cases distinctes lors de votre inscription :</p>
-              <ul>
-                <li>Le <strong>code promo EBOX</strong> est généralement un mot-clé temporaire utilisé par EBOX pour des campagnes marketing spécifiques.</li>
-                <li>Le <strong>code client (GE911)</strong> est un code de parrainage permanent.</li>
-              </ul>
-              <p>Pendant le formulaire de commande, veillez à bien inscrire <code>GE911</code> dans le champ intitulé <strong>« Numéro de client EBOX de l'ami qui vous réfère »</strong> et non dans la case code promo, sans quoi le système ne pourra pas valider vos 25 $ de crédit.</p>
-            </div>
-          </details>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <div class="cta-section">
-        <h2>Prêt à commander votre accès Internet ?</h2>
-        <p>Cliquez ci-dessous, choisissez votre forfait Internet et entrez simplement le code <strong>GE911</strong> dans le champ de parrainage pendant votre inscription pour activer votre rabais de 25 $.</p>
-        <a class="btn" href="https://www.ebox.ca/" target="_blank" rel="noopener noreferrer">
-        🌐 Aller sur le site d'EBOX
-        </a>    
-        <div class="cta-code-row">
-          <span class="cta-code-pill">GE911</span>
-          <button class="cta-copy-btn" data-copy="GE911" data-target="copyStatusCta">Copier le code</button>
+        <section id="review" aria-label="Avis personnel">
+          <span class="section-label">Mon expérience</span>
+          <h2>Mon avis sur EBOX</h2>
+          <div class="review-box">
+            <p>Depuis que je suis chez EBOX, mon expérience est très positive. Je n’ai pas eu d’erreur de facturation, la connexion a été très stable au quotidien, et mon suivi montre très peu de déconnexions visibles.</p>
+            <p>Ce que j’apprécie particulièrement :</p>
+            <ul>
+              <li><strong>Fiabilité du réseau :</strong> les interruptions ont été rares dans mon cas.</li>
+              <li><strong>Facturation simple :</strong> je n’ai pas eu de mauvaise surprise ou d’erreur de facturation.</li>
+              <li><strong>Meilleure impression globale :</strong> à titre personnel, EBOX m’a donné une meilleure impression de stabilité que mon expérience passée avec Vidéotron.</li>
+            </ul>
+            <p>Si vous cherchez un fournisseur Internet simple, fiable et facile à recommander autour de vous, EBOX est une option que je trouve vraiment solide d’après ma propre expérience.</p>
+            <p style="margin-top: 20px; font-size: 0.95rem; border-top: 1px dashed var(--border); padding-top: 15px;">
+              💡 En pleine optimisation de vos dépenses résidentielles ? Découvrez aussi mes guides et codes pour optimiser vos forfaits avec <a href="https://cashinstinct.github.io/stickermule/fr/">Sticker Mule</a> ou pour vos comptes avec <a href="https://cashinstinct.github.io/tangerine-orange-key/">Tangerine</a>.
+            </p>
+          </div>
+        </section>
+        
+        <section id="english-summary" class="english-block" aria-label="English Summary">
+          <h2>English Summary: EBOX Referral Code</h2>
+          <p>Searching for an <strong>EBOX referral code</strong> or <strong>EBOX client code</strong>? Use <code>GE911</code> during your checkout to get a <strong>$25 credit</strong> on your second bill. Make sure to enter it in the "Friend's EBOX client number" field. This referral code is active and tested for 2026.</p>
+        </section>
+
+        <section id="faq" aria-label="Foire aux questions">
+          <span class="section-label">Questions fréquentes</span>
+          <h2>Foire aux questions</h2>
+          <div class="faq">
+            <details>
+              <summary>Quel est le code client EBOX à utiliser en 2026 ?</summary>
+              <div class="faq-body">
+                <p>Le code client (numéro de client) à utiliser est <strong>GE911</strong>. Il donne 25 $ de crédit sur la 2e facture pour tout nouvel abonné admissible.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Le rabais EBOX était-il de 50 $ avant ?</summary>
+              <div class="faq-body">
+                <p>Oui, EBOX offrait temporairement un crédit de 50 $ en promotion. Depuis <strong>juin 2026</strong>, le rabais de parrainage standard est revenu à 25 $ avec le code GE911. Contrairement à de vieux posts sur les forums, cette page vous donne le montant exact actuellement en vigueur.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Où faut-il entrer le code client EBOX GE911 ?</summary>
+              <div class="faq-body">
+                <p>Il faut entrer GE911 dans le champ affiché pendant l'inscription pour inscrire le numéro de client EBOX de la personne qui vous réfère.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Peut-on ajouter le numéro de client EBOX après l'inscription ?</summary>
+              <div class="faq-body">
+                <p>En général, non. Il faut impérativement l'ajouter au moment de la commande initiale pour que le système valide la référence.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Le code client EBOX et le code de référence, est-ce la même chose ?</summary>
+              <div class="faq-body">
+                <p>Dans la pratique, beaucoup de gens parlent d'un code de référence EBOX. Sur l'écran d'inscription, EBOX demande surtout le <strong>numéro de client</strong> de la personne qui vous réfère. Ici, ce numéro est <code>GE911</code>.</p>
+              </div>
+            </details>
+             <details>
+              <summary>Quelle est la différence entre un code promo EBOX et ce code client ?</summary>
+              <div class="faq-body">
+                <p>Ce sont deux cases distinctes lors de votre inscription :</p>
+                <ul>
+                  <li>Le <strong>code promo EBOX</strong> est généralement un mot-clé temporaire utilisé par EBOX pour des campagnes marketing spécifiques.</li>
+                  <li>Le <strong>code client (GE911)</strong> est un code de parrainage permanent.</li>
+                </ul>
+                <p>Dans le formulaire de commande, veillez à bien inscrire <code>GE911</code> dans le champ intitulé <strong>« Numéro de client EBOX de l'ami qui vous réfère »</strong> et non dans la case code promo, sans quoi le système ne pourra pas valider vos 25 $ de crédit.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <div class="cta-section">
+          <h2>Prêt à commander votre accès Internet ?</h2>
+          <p>Cliquez ci-dessous, choisissez votre forfait Internet et entrez simplement le code <strong>GE911</strong> dans le champ de parrainage pendant votre inscription pour activer votre rabais de 25 $.</p>
+          <a class="btn" href="https://www.ebox.ca/" target="_blank" rel="noopener noreferrer">
+          🌐 Aller sur le site d'EBOX
+          </a>    
+          <div class="cta-code-row">
+            <span class="cta-code-pill">GE911</span>
+            <button class="cta-copy-btn" data-copy="GE911" data-target="copyStatusCta" type="button">Copier le code</button>
+          </div>
+          <span class="copy-status" id="copyStatusCta" role="status" aria-atomic="true" aria-live="polite"></span>
         </div>
-        <span class="copy-status" id="copyStatusCta" role="status" aria-atomic="true" aria-live="polite"></span>
+
+        <div class="transparency">
+          <strong>Transparence :</strong> cette page est une ressource indépendante. En utilisant le code <code>GE911</code>, vous obtenez 25 $ de crédit, et je reçois également un crédit sur ma facture en guise de remerciement. Vérifiez toujours les conditions en vigueur directement sur le site d'EBOX.
+        </div>
+
       </div>
-
-      <div class="transparency">
-        <strong>Transparence :</strong> cette page est une ressource indépendante. En utilisant le code <code>GE911</code>, vous obtenez 25 $ de crédit, et je reçois également un crédit sur ma facture en guise de remerciement. Vérifiez toujours les conditions en vigueur directement sur le site d'EBOX.
-      </div>
-
     </div>
   </main>
 
@@ -586,20 +690,29 @@
   </footer>
 
   <script>
-    async function copyText(text, statusId) {
+    async function copyText(text, button, statusId) {
       const status = document.getElementById(statusId);
+      const originalText = button.textContent;
+
       try {
         await navigator.clipboard.writeText(text);
-        status.textContent = "Code copié ✔";
-        setTimeout(() => { status.textContent = ""; }, 2200);
+        button.textContent = "Copié !";
+        button.style.background = "var(--accent)";
+        button.style.color = "#ffffff";
+        
+        setTimeout(() => { 
+          button.textContent = originalText; 
+          button.style.background = "";
+          button.style.color = "";
+        }, 2000);
       } catch (err) {
-        status.textContent = "Impossible de copier automatiquement.";
+        if (status) status.textContent = "Impossible de copier automatiquement.";
       }
     }
 
     document.querySelectorAll("[data-copy]").forEach((button) => {
       button.addEventListener("click", () => {
-        copyText(button.getAttribute("data-copy"), button.getAttribute("data-target"));
+        copyText(button.getAttribute("data-copy"), button, button.getAttribute("data-target"));
       });
     });
 
