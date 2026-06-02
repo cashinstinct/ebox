@@ -90,8 +90,39 @@
           "price": "0.00",
           "description": "Le code de parrainage GE911 est gratuit à utiliser et applique un crédit de 25 $ sur la deuxième facture.",
           "priceValidUntil": "2027-12-31",
-          "availability": "https://schema.org/InStock"
-        },
+          "availability": "https://schema.org/InStock",
+    "shippingDetails": {
+  "@type": "OfferShippingDetails",
+  "shippingRate": {
+    "@type": "MonetaryAmount",
+    "value": "0.00",
+    "currency": "CAD"
+  },
+  "shippingDestination": {
+    "@type": "DefinedRegion",
+    "addressCountry": "CA"
+  },
+  "deliveryTime": {
+    "@type": "ShippingDeliveryTime",
+    "handlingTime": {
+      "@type": "QuantitativeValue",
+      "minValue": 0,
+      "maxValue": 0,
+      "unitCode": "DAY"
+    },
+    "transitTime": {
+      "@type": "QuantitativeValue",
+      "minValue": 0,
+      "maxValue": 0,
+      "unitCode": "DAY"
+    }
+  }
+},
+"hasMerchantReturnPolicy": {
+  "@type": "MerchantReturnPolicy",
+  "applicableCountry": "CA",
+  "returnPolicyCategory": "https://schema.org/NoReturns"
+},
         "review": {
           "@type": "Review",
           "author": {
@@ -168,7 +199,7 @@
   "name": "Tutoriel Code Client EBOX GE911",
   "description": "Enregistrement d'écran montrant où entrer le code de parrainage GE911 lors de la commande EBOX.",
   "thumbnailUrl": "https://img.youtube.com/vi/dUFRORlBJYA/maxresdefault.jpg",
-  "uploadDate": "2026-06-01",
+  "uploadDate": "2026-06-01T00:00:00+00:00",
   "contentUrl": "https://www.youtube.com/watch?v=dUFRORlBJYA",
   "embedUrl": "https://www.youtube.com/embed/dUFRORlBJYA",
   "publisher": {
