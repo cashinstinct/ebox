@@ -162,7 +162,24 @@
             }
           }
         ]
-      }
+      },
+    {
+  "@type": "VideoObject",
+  "name": "Tutoriel Code Client EBOX GE911",
+  "description": "Enregistrement d'écran montrant où entrer le code de parrainage GE911 lors de la commande EBOX.",
+  "thumbnailUrl": "https://img.youtube.com/vi/dUFRORlBJYA/maxresdefault.jpg",
+  "uploadDate": "2026-06-01",
+  "contentUrl": "https://www.youtube.com/watch?v=dUFRORlBJYA",
+  "embedUrl": "https://www.youtube.com/embed/dUFRORlBJYA",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cash Instinct",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cashinstinct.github.io/logo.png"
+    }
+  }
+}
     ]
   }
   </script>
@@ -451,7 +468,7 @@
     .cta-copy-btn { background: rgba(255,255,255,0.18); color: #fff; padding: 10px 14px; font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.4); }
     .cta-copy-btn.copied { background: #fff; color: var(--accent); }
 
- /* FIX #2 : uniformisation du copy-status (visible mais vide par défaut) */
+ /* uniformisation du copy-status (visible mais vide par défaut) */
     .copy-status {
       display: block;
       min-height: 1.2em;
@@ -493,7 +510,7 @@
   <nav class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="https://cashinstinct.github.io/">Cash Instinct</a>
-      <!-- FIX #8 : ajout HP Instant Ink dans la nav -->
+      <!-- ajout HP Instant Ink dans la nav -->
       <div class="nav">
         <a href="https://cashinstinct.github.io/">Accueil</a>
         <a class="active" href="https://cashinstinct.github.io/ebox-referral-code-2026/">EBOX</a>
@@ -519,10 +536,10 @@
           
           <div class="input-copy-group" style="display: flex; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: auto; margin-bottom: auto; padding: 4px;">
             <input type="text" value="GE911" id="promo-code" readonly aria-readonly="true" aria-label="Numéro de client EBOX" style="flex: 1; border: none; padding: 12px 16px; font-family: monospace; font-size: 1.1rem; font-weight: 700; color: var(--text); background: transparent; text-align: center;" />
-            <!-- FIX #1 : id="copy-btn" supprimé, utilisation exclusive de data-copy -->
+            <!-- id="copy-btn" supprimé, utilisation exclusive de data-copy -->
             <button class="copy-btn" data-copy="GE911" data-target="copyStatusHero" type="button" style="background: var(--text); color: var(--surface); border: none; border-radius: 6px; font-weight: 700; padding: 0 20px; cursor: pointer; font-size: 0.95rem; white-space: nowrap;">Copier le code</button>
           </div>
-          <!-- FIX #2 : display:none retiré, remplacé par classe .copy-status uniforme -->
+          <!-- display:none retiré, remplacé par classe .copy-status uniforme -->
           <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
 
           <p style="font-size: 0.85rem; margin-top: auto; text-align: center;">
@@ -538,7 +555,7 @@
           <a href="https://www.ebox.ca/" target="_blank" rel="noopener noreferrer" style="display: block; margin-top: auto;">
             <picture>
               <source srcset="images/validation-code-ebox-ge911_FR.webp" type="image/webp">
-              <!-- FIX #3 : loading="lazy" + onerror fallback -->
+              <!-- loading="lazy" + onerror fallback -->
               <img src="images/validation-code-ebox-ge911_FR.png"
                    alt="Champ d'inscription EBOX affichant le code de parrainage client GE911 validé par le système"
                    width="1440" height="420"
@@ -611,8 +628,29 @@
               </div>
             </li>
           </ol>
+          
         </section>
-
+                <section id="tutoriel-video" aria-label="Tutoriel Vidéo EBOX">
+          <span class="section-label">Vidéo explicative</span>
+          <h2>Où entrer le code client GE911 en vidéo</h2>
+          <p>Voici un enregistrement d'écran rapide montrant exactement où repérer le champ de parrainage lors de votre commande EBOX.</p>
+          
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); margin-top: 24px; margin-bottom: 24px;">
+            <iframe 
+              src="https://www.youtube.com/embed/dUFRORlBJYA" 
+              title="Tutoriel Code Client EBOX GE911" 
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          
+          <div class="transparency">
+            <strong>Rappel visuel :</strong> Comme le montre la vidéo, ne confondez pas le champ « Code Promo » (en haut) avec le champ « Numéro de client de l'ami » (juste en dessous). Le code <code>GE911</code> doit être inscrit dans le <strong>deuxième champ</strong> pour activer le crédit de 25 $.
+          </div>
+        </section>
+        
         <section id="admissibilite" aria-label="Critères d'admissibilité">
           <span class="section-label">Conditions</span>
           <h2>Qui peut utiliser le code de parrainage EBOX ?</h2>
@@ -656,7 +694,7 @@
               <li><strong>Meilleure impression globale :</strong> À titre personnel, EBOX m'a donné une meilleure impression de stabilité que mon expérience passée avec Vidéotron.</li>
             </ul>
             <p>Si vous cherchez un fournisseur Internet simple, fiable et facile à recommander autour de vous, EBOX est une option que je trouve vraiment solide d'après ma propre expérience.</p>
-            <!-- FIX #8 : ajout HP Instant Ink dans les liens internes -->
+            <!-- ajout HP Instant Ink dans les liens internes -->
             <p style="margin-top: 20px; font-size: 0.95rem; border-top: 1px dashed var(--border); padding-top: 15px;">
               💡 En pleine optimisation de vos dépenses résidentielles ? Découvrez aussi mes guides et codes pour <a href="https://cashinstinct.github.io/stickermule/fr/">Sticker Mule</a>, pour vos comptes avec <a href="https://cashinstinct.github.io/tangerine-orange-key/">Tangerine</a>, ou pour votre encre d'imprimante avec <a href="https://cashinstinct.github.io/hp-instant-ink/">HP Instant Ink</a>.
             </p>
