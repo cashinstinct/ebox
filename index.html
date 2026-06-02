@@ -667,16 +667,41 @@
           <h2>Où entrer le code client GE911 en vidéo</h2>
           <p>Voici un enregistrement d'écran rapide montrant exactement où repérer le champ de parrainage lors de votre commande EBOX.</p>
           
-          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); margin-top: 24px; margin-bottom: 24px;">
-            <iframe 
-              src="https://www.youtube.com/embed/dUFRORlBJYA" 
-              title="Tutoriel Code Client EBOX GE911" 
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" 
-              allowfullscreen>
-            </iframe>
-          </div>
+<div id="ebox-video-facade"
+  style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;
+         border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow);
+         margin-top:24px; margin-bottom:24px; cursor:pointer; background:#000;"
+  onclick="
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/dUFRORlBJYA?autoplay=1';
+    iframe.title = 'Tutoriel Code Client EBOX GE911';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;';
+    this.innerHTML = '';
+    this.appendChild(iframe);
+  ">
+  <img
+    src="https://img.youtube.com/vi/dUFRORlBJYA/maxresdefault.jpg"
+    alt="Tutoriel Code Client EBOX GE911 — cliquez pour lancer la vidéo"
+    loading="lazy"
+    width="1280"
+    height="720"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"
+  >
+  <!-- Bouton Play -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+              width:72px;height:72px;background:rgba(176,49,45,0.92);
+              border-radius:50%;display:flex;align-items:center;justify-content:center;
+              box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:transform 0.15s;"
+       onmouseover="this.style.transform='translate(-50%,-50%) scale(1.1)'"
+       onmouseout="this.style.transform='translate(-50%,-50%) scale(1)'">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <polygon points="5,3 19,12 5,21"/>
+    </svg>
+  </div>
+</div>
+
           
           <div class="transparency">
             <strong>Rappel visuel :</strong> Comme le montre la vidéo, ne confondez pas le champ « Code Promo » (en haut) avec le champ « Numéro de client de l'ami » (juste en dessous). Le code <code>GE911</code> doit être inscrit dans le <strong>deuxième champ</strong> pour activer le crédit de 25 $.
