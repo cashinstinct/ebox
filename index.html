@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#b0312d" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#b0312d" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f131a" />
+  
   <title>Code client EBOX GE911 : où l'entrer et comment obtenir 25 $ de rabais</title>
   <meta name="description" content="GE911 est un numéro de client EBOX (referral code) qui donne 25 $ de crédit sur la 2e facture. Cette page montre où l'entrer et comment le rabais fonctionne." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.github.io/ebox-referral-code-2026/" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  
+  <link rel="alternate" hreflang="fr-CA" href="https://cashinstinct.github.io/ebox-referral-code-2026/" />
+  <link rel="alternate" hreflang="fr" href="https://cashinstinct.github.io/ebox-referral-code-2026/" />
+  <link rel="alternate" hreflang="x-default" href="https://cashinstinct.github.io/ebox-referral-code-2026/" />
   
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashinstinct.github.io/ebox-referral-code-2026/" />
@@ -462,6 +468,19 @@
     @media (min-width: 768px) { body { font-size: 19px; } }
   </style>
 </head>
+  
+  <script>
+  try {
+    let theme = localStorage.getItem('theme');
+    if (!theme) {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+</script>
+  
 <body>
 
   <nav class="topbar">
@@ -736,11 +755,18 @@
       </div>
     </div>
   </main>
-
+  
+<script>
+  const footerDate = document.getElementById("footer-date");
+  if (footerDate) {
+    footerDate.textContent = new Date().toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
+  }
+</script>
+  
   <footer>
     <div class="container">
       <p>Site non affilié officiellement à EBOX. Les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
-      <p style="margin-top:6px;">Code client EBOX : <code>GE911</code> — Mis à jour : juin 2026</p>
+      <p style="margin-top:6px;">Code client EBOX : <code>GE911</code> — Mis à jour : <span id="footer-date">Juin 2026</span></p>
     </div>
   </footer>
 
@@ -785,6 +811,8 @@
       document.documentElement.setAttribute("data-theme", "dark");
       setThemeUI(true);
     } else {
+
+
       setThemeUI(false);
     }
 
