@@ -467,7 +467,6 @@
     }
     @media (min-width: 768px) { body { font-size: 19px; } }
   </style>
-</head>
   
   <script>
   try {
@@ -481,6 +480,9 @@
   }
 </script>
   
+</head>
+  
+
 <body>
 
   <nav class="topbar">
@@ -756,13 +758,6 @@
     </div>
   </main>
   
-<script>
-  const footerDate = document.getElementById("footer-date");
-  if (footerDate) {
-    footerDate.textContent = new Date().toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
-  }
-</script>
-  
   <footer>
     <div class="container">
       <p>Site non affilié officiellement à EBOX. Les marques de commerce appartiennent à leurs propriétaires respectifs.</p>
@@ -830,6 +825,12 @@
       }
     });
   </script>
-
+<script>
+  const footerDate = document.getElementById("footer-date");
+  if (footerDate) {
+    footerDate.textContent = new Date().toLocaleDateString("fr-CA", { month: "long", year: "numeric" });
+  }
+</script>
+  
 </body>
 </html>
