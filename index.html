@@ -521,6 +521,12 @@
       font-size: 0.95rem;
       color: var(--text-soft);
     }
+     /* forcer la couleur sur bouton copier */
+    .input-copy-group button.copy-btn {
+  background: var(--text);
+  color: var(--surface);
+  -webkit-appearance: none;
+}
     [data-theme="dark"] .field-exact { border-left-color: var(--accent-dark); }
     .field-exact strong { color: var(--text); display: block; margin-bottom: 6px; }
     .field-exact code { font-size: 0.9rem; }
@@ -714,10 +720,10 @@
       <a class="brand" href="https://cashinstinct.github.io/">Cash Instinct</a>
       <div class="nav">
         <a class="active" href="https://cashinstinct.github.io/code-client-ebox/">EBOX</a>
-        <a href="https://cashinstinct.github.io/stickermule/fr/">StickerMule</a>
+        <a href="https://cashinstinct.github.io/stickermule/fr/">Sticker&nbsp;Mule</a>
         <a href="https://cashinstinct.github.io/tangerine-orange-key/">Tangerine</a>
         <!-- AJOUT lien English summary dans la nav -->
-        <a href="#english-summary" class="nav-en" aria-label="See this page in English">English ↓</a>
+        <a href="#english-summary" class="nav-en" aria-label="See this page in English">English</a>
         <button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
       </div>
     </div>
@@ -755,7 +761,8 @@
           
           <div class="input-copy-group" style="display: flex; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: auto; margin-bottom: auto; padding: 4px;">
             <input type="text" value="GE911" id="promo-code" readonly aria-readonly="true" aria-label="Numéro de client EBOX" style="flex: 1; border: none; padding: 12px 16px; font-family: monospace; font-size: 1.1rem; font-weight: 700; color: var(--text); background: transparent; text-align: center;" />
-            <button class="copy-btn" data-copy="GE911" data-target="copyStatusHero" type="button" style="background: var(--text); color: var(--surface); border: none; border-radius: 6px; font-weight: 700; padding: 0 20px; cursor: pointer; font-size: 0.95rem; white-space: nowrap;">Copier le code</button>
+       <button class="copy-btn" data-copy="GE911" data-target="copyStatusHero" type="button" 
+  style="background: var(--text); color: var(--surface); border: none; border-radius: 6px; font-weight: 700; padding: 0 20px; cursor: pointer; font-size: 0.95rem; white-space: nowrap; -webkit-appearance: none;">Copier le code</button>
           </div>
           <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
 
