@@ -306,31 +306,26 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(10px);
-    }
+}
     .topbar-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .brand { font-size: 1.05rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
-    .nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-    .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; }
-    .nav a:hover, .nav a.active { color: var(--accent); }
-    /* English anchor link styling — subtle but visible */
-    .nav a.nav-en {
-      font-size: 0.85rem;
-      padding: 3px 8px;
-      border: 1px solid var(--border-soft);
-      border-radius: 4px;
-      color: var(--muted);
-    }
-    .nav a.nav-en:hover { color: var(--accent); border-color: var(--accent); }
-
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;        /* même ligne partout */
+  flex-wrap: wrap;            /* wrap si trop étroit */
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.brand { font-size: 0.95rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; text-decoration: none; }
+.nav { display: flex; gap: 12px; flex-wrap: nowrap; align-items: center; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; }
+.nav a:hover, .nav a.active { color: var(--accent); }
+.nav a.nav-en { font-size: 0.85rem; padding: 3px 8px; border: 1px solid var(--border-soft); border-radius: 4px; color: var(--muted); }
+.nav a.nav-en:hover { color: var(--accent); border-color: var(--accent); 
+                    }
     .theme-btn {
       background: var(--surface-muted);
       border: 1px solid var(--border);
@@ -713,12 +708,10 @@
     <div class="topbar-inner">
       <a class="brand" href="https://cashinstinct.github.io/">Cash Instinct</a>
       <div class="nav">
-        <a href="https://cashinstinct.github.io/">Accueil</a>
         <a class="active" href="https://cashinstinct.github.io/code-client-ebox/">EBOX</a>
         <a href="https://cashinstinct.github.io/stickermule/fr/">Sticker Mule</a>
         <a href="https://cashinstinct.github.io/tangerine-orange-key/">Tangerine</a>
-        <a href="https://cashinstinct.github.io/hp-instant-ink/">HP Instant Ink</a>
-        <!-- AJOUT #1 : lien English dans la nav -->
+        <!-- AJOUT lien English summary dans la nav -->
         <a href="#english-summary" class="nav-en" aria-label="See this page in English">English ↓</a>
         <button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
       </div>
