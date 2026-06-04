@@ -6,7 +6,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#b0312d" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f131a" />
   
-  <title>Code client EBOX GE911 : où l'entrer et comment obtenir 25 $ de rabais</title>
+  <title>Code client EBOX GE911 : jusqu'à 125 $ de rabais (promo + parrainage)</title>
   <meta name="description" content="GE911 est le numéro de client EBOX donnant 25 $ de crédit sur la 2e facture. Promo en cours : carte prépayée de 100 $ combinable (jusqu'au 17 juin 2026). Où entrer le code et comment ça fonctionne." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://cashinstinct.github.io/ebox-referral-code-2026/" />
@@ -18,7 +18,7 @@
   
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashinstinct.github.io/ebox-referral-code-2026/" />
-  <meta property="og:title" content="Code client EBOX GE911 : où l'entrer et comment obtenir 25 $ de rabais" />
+  <meta property="og:title" content="Code client EBOX GE911 : jusqu'à 125 $ de rabais (promo + parrainage)" />
   <meta property="og:description" content="GE911 donne 25 $ de crédit sur la 2e facture pour les nouveaux clients EBOX. La page explique où entrer le numéro de client, ce que vous verrez à l'écran et quand le rabais s'applique." />
   <meta property="og:locale" content="fr_CA" />
   <meta property="og:site_name" content="Cash Instinct" />
@@ -39,7 +39,7 @@
         "@type": "WebPage",
         "@id": "https://cashinstinct.github.io/ebox-referral-code-2026/",
         "url": "https://cashinstinct.github.io/ebox-referral-code-2026/",
-        "name": "Code client EBOX GE911 : où l'entrer et comment obtenir 25 $ de rabais",
+        "name": "Code client EBOX GE911 : jusqu'à 125 $ de rabais (promo + parrainage)",
         "description": "GE911 est un numéro de client EBOX qui donne 25 $ de crédit sur la 2e facture des nouveaux clients.",
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": "https://cashinstinct.github.io/#website" },
@@ -63,7 +63,12 @@
   "@type": "WebSite",
   "@id": "https://cashinstinct.github.io/#website",
   "url": "https://cashinstinct.github.io/",
-  "name": "Cash Instinct"
+  "name": "Cash Instinct",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://cashinstinct.github.io/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 },
 {
   "@type": "BreadcrumbList",
@@ -316,6 +321,15 @@
     .nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
     .nav a { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-decoration: none; }
     .nav a:hover, .nav a.active { color: var(--accent); }
+    /* English anchor link styling — subtle but visible */
+    .nav a.nav-en {
+      font-size: 0.85rem;
+      padding: 3px 8px;
+      border: 1px solid var(--border-soft);
+      border-radius: 4px;
+      color: var(--muted);
+    }
+    .nav a.nav-en:hover { color: var(--accent); border-color: var(--accent); }
 
     .theme-btn {
       background: var(--surface-muted);
@@ -359,6 +373,62 @@
       max-width: 620px;
       margin: 0 auto 28px;
       color: #fff;
+    }
+
+    /* ── COMPTE À REBOURS ── */
+    .countdown-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin: 20px auto 0;
+      flex-wrap: wrap;
+    }
+    .countdown-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .countdown-units {
+      display: flex;
+      gap: 6px;
+    }
+    .countdown-unit {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px;
+      padding: 4px 10px;
+      text-align: center;
+      min-width: 52px;
+    }
+    .countdown-unit .val {
+      display: block;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .countdown-unit .lbl {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    /* Message post-expiration dans le hero */
+    .promo-expired-notice {
+      display: none;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      margin: 16px auto 0;
+      max-width: 560px;
     }
 
     .hero-methods {
@@ -421,6 +491,20 @@
     }
     .ai-summary strong { color: var(--text); font-weight: 800; }
 
+    /* Bloc post-expiration dans le body (caché par défaut, JS l'active) */
+    .post-promo-notice {
+      display: none;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--muted);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: var(--text-soft);
+    }
+    .post-promo-notice strong { color: var(--text); }
+
     .warning {
       background: var(--warning-bg);
       border-left: 4px solid var(--warning-border);
@@ -430,6 +514,21 @@
       margin: 32px 0;
       border-radius: 0 6px 6px 0;
     }
+
+    /* Encadré champ exact EBOX */
+    .field-exact {
+      background: var(--surface-muted);
+      border: 1px solid var(--border-soft);
+      border-left: 4px solid var(--accent-dark, #1e40af);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 20px;
+      margin: 20px 0;
+      font-size: 0.95rem;
+      color: var(--text-soft);
+    }
+    [data-theme="dark"] .field-exact { border-left-color: var(--accent-dark); }
+    .field-exact strong { color: var(--text); display: block; margin-bottom: 6px; }
+    .field-exact code { font-size: 0.9rem; }
 
     .section-label {
       display: inline-block; 
@@ -524,7 +623,6 @@
     .cta-copy-btn { background: rgba(255,255,255,0.18); color: #fff; padding: 10px 14px; font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.4); }
     .cta-copy-btn.copied { background: #fff; color: var(--accent); }
 
- /* uniformisation du copy-status (visible mais vide par défaut) */
     .copy-status {
       display: block;
       min-height: 1.2em;
@@ -540,13 +638,61 @@
 
     footer { border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
 
+    /* Compenser la topbar sticky (~52px) sur les ancres */
+    section[id] { scroll-margin-top: 72px; }
+
+    /* Sticky CTA mobile (#8) */
+    .sticky-mobile-cta {
+      display: none;
+    }
     @media (max-width: 640px) {
       .topbar-inner { padding: 14px 20px; }
       .nav { gap: 12px; }
       .facts { grid-template-columns: 1fr; }
+      .sticky-mobile-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        background: var(--accent);
+        color: #fff;
+        padding: 12px 20px;
+        z-index: 200;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+      .sticky-mobile-cta.visible { transform: translateY(0); }
+      .sticky-mobile-cta .s-code {
+        font-family: "Courier New", Courier, monospace;
+        font-weight: 900;
+        font-size: 1.1rem;
+        letter-spacing: 0.06em;
+      }
+      .sticky-mobile-cta .s-btn {
+        background: rgba(255,255,255,0.18);
+        border: 1px solid rgba(255,255,255,0.4);
+        color: #fff;
+        font-weight: 800;
+        font-size: 0.9rem;
+        padding: 8px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .sticky-mobile-cta .s-btn.copied {
+        background: #fff;
+        color: var(--accent);
+      }
     }
     @media (min-width: 768px) { body { font-size: 19px; } }
   </style>
+
+  <!-- Preload image LCP hero (#4) -->
+  <link rel="preload" as="image"
+    href="images/validation-code-ebox-ge911_FR.webp"
+    type="image/webp" fetchpriority="high" />
 
   <script>
     try {
@@ -566,13 +712,14 @@
   <nav class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="https://cashinstinct.github.io/">Cash Instinct</a>
-      <!-- ajout HP Instant Ink dans la nav -->
       <div class="nav">
         <a href="https://cashinstinct.github.io/">Accueil</a>
         <a class="active" href="https://cashinstinct.github.io/ebox-referral-code-2026/">EBOX</a>
         <a href="https://cashinstinct.github.io/stickermule/fr/">Sticker Mule</a>
         <a href="https://cashinstinct.github.io/tangerine-orange-key/">Tangerine</a>
         <a href="https://cashinstinct.github.io/hp-instant-ink/">HP Instant Ink</a>
+        <!-- AJOUT #1 : lien English dans la nav -->
+        <a href="#english-summary" class="nav-en" aria-label="See this page in English">English ↓</a>
         <button id="theme-toggle" class="theme-btn" type="button" aria-label="Activer le mode sombre" aria-pressed="false">🌙</button>
       </div>
     </div>
@@ -580,9 +727,27 @@
 
   <header class="hero">
     <div class="container">
-      <h1>EBOX code client GE911 pour 25 $ de rabais en 2026</h1>
-      <p>Si vous cherchez un <strong>code de parrainage</strong> ou un <strong>numéro de client EBOX</strong> pour économiser sur votre forfait Internet, voici deux méthodes simples d'activation.</p>
+      <!-- MODIFICATION #1 : H1 → "jusqu'à 125 $" -->
+      <h1>Code EBOX GE911 — jusqu'à 125 $ de rabais en 2026</h1>
+      <p>Cumulez le <strong>code de parrainage GE911</strong> (25 $ sur la 2e facture) et la <strong>carte Mastercard prépayée de 100 $</strong> lors de votre inscription EBOX. Sans contrat, modem inclus.</p>
       
+      <!-- AJOUT #2 : Compte à rebours vers le 17 juin 2026 -->
+      <div id="countdown-wrapper">
+        <div class="countdown-bar" id="countdown-bar">
+          <span class="countdown-label">⏳ Promo 100 $ expire dans</span>
+          <div class="countdown-units">
+            <div class="countdown-unit"><span class="val" id="cd-days">--</span><span class="lbl">jours</span></div>
+            <div class="countdown-unit"><span class="val" id="cd-hours">--</span><span class="lbl">heures</span></div>
+            <div class="countdown-unit"><span class="val" id="cd-mins">--</span><span class="lbl">min</span></div>
+            <div class="countdown-unit"><span class="val" id="cd-secs">--</span><span class="lbl">sec</span></div>
+          </div>
+        </div>
+        <!-- Message affiché APRÈS expiration dans le hero -->
+        <div class="promo-expired-notice" id="hero-expired-notice">
+          ✅ La promo 100 $ est terminée — le code <strong>GE911</strong> reste actif et donne toujours <strong>25 $ de crédit</strong> sur votre 2e facture.
+        </div>
+      </div>
+
       <div class="hero-methods">
         
         <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow);">
@@ -592,10 +757,8 @@
           
           <div class="input-copy-group" style="display: flex; background: var(--surface-soft); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: auto; margin-bottom: auto; padding: 4px;">
             <input type="text" value="GE911" id="promo-code" readonly aria-readonly="true" aria-label="Numéro de client EBOX" style="flex: 1; border: none; padding: 12px 16px; font-family: monospace; font-size: 1.1rem; font-weight: 700; color: var(--text); background: transparent; text-align: center;" />
-            <!-- id="copy-btn" supprimé, utilisation exclusive de data-copy -->
             <button class="copy-btn" data-copy="GE911" data-target="copyStatusHero" type="button" style="background: var(--text); color: var(--surface); border: none; border-radius: 6px; font-weight: 700; padding: 0 20px; cursor: pointer; font-size: 0.95rem; white-space: nowrap;">Copier le code</button>
           </div>
-          <!-- display:none retiré, remplacé par classe .copy-status uniforme -->
           <span id="copyStatusHero" class="copy-status" role="status" aria-atomic="true" aria-live="polite"></span>
 
           <p style="font-size: 0.85rem; margin-top: auto; text-align: center;">
@@ -611,12 +774,12 @@
           <a href="https://www.ebox.ca/" target="_blank" rel="noopener noreferrer" style="display: block; margin-top: auto;">
             <picture>
               <source srcset="images/validation-code-ebox-ge911_FR.webp" type="image/webp">
-              <!-- loading="lazy" + onerror fallback -->
               <img src="images/validation-code-ebox-ge911_FR.png"
                    alt="Champ d'inscription EBOX affichant le code de parrainage client GE911 validé par le système"
                    width="1440" height="420"
-                   loading="lazy"
-                   onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterend','<p style=\'color:var(--muted);font-size:0.85rem;text-align:center;padding:12px;\'>Capture d\'écran temporairement indisponible.</p>');"
+                   loading="eager"
+                   fetchpriority="high"
+                   data-fallback="true"
                    style="border-radius: 8px; border: 1px solid var(--border-soft); box-shadow: var(--shadow); width: 100%; height: auto;" />
             </picture>
           </a>
@@ -642,13 +805,16 @@
           EBOX
         </nav>
 
+        <!-- AJOUT #5 : Bloc conditionnel post-17 juin (masqué par défaut, JS l'active) -->
+        <div class="post-promo-notice" id="post-promo-block">
+          ℹ️ <strong>La promotion 100 $ est maintenant terminée.</strong> Le code de parrainage <strong>GE911</strong> reste actif et donne toujours <strong>25 $ de crédit</strong> sur votre 2e facture EBOX. Aucune date limite — c'est un programme permanent.
+        </div>
+
         <div class="ai-summary">
-  Le numéro de client EBOX actif en juin 2026 est <strong>GE911</strong>. Ce code de parrainage permanent offre un crédit de <strong>25 $ applicable automatiquement sur la deuxième facture</strong> de tout nouvel abonné résidentiel. Il doit obligatoirement être saisi dans le champ « Numéro de client de l'ami » lors de la commande initiale en ligne.
+  Le numéro de client EBOX actif en juin 2026 est <strong>GE911</strong>. Ce code de parrainage permanent offre un crédit de <strong>25 $ applicable automatiquement sur la deuxième facture</strong> de tout nouvel abonné résidentiel. Il doit obligatoirement être saisi dans le champ <em>« Code — 25 $ pour toi et tes amis ! »</em> lors de la commande initiale en ligne.
   <br><br>
-  🎁 <strong>Promo en cours jusqu'au 17 juin 2026 :</strong> les nouveaux clients qui s'abonnent au forfait Fibre <strong>500 Mbps ou 1 Gbps</strong> reçoivent en plus une <strong>carte Mastercard prépayée de 100 $</strong> (livraison numérique après 60 jours de service). Cette promotion est <strong>combinable avec le code GE911</strong> — les deux avantages ont été confirmés actifs sur une même commande.
+  🎁 <strong>Promo en cours jusqu'au 17 juin 2026 :</strong> les nouveaux clients qui s'abonnent au forfait Fibre <strong>500 Mbps ou 1 Gbps</strong> reçoivent en plus une <strong>carte Mastercard prépayée de 100 $</strong> (livraison numérique après 60 jours de service). Cette promotion est <strong>combinable avec le code GE911</strong> — total : <strong>jusqu'à 125 $ d'avantages</strong>.
 </div>
-
-
 
         <p style="font-size:0.8rem; color:var(--muted); margin-bottom:16px;">
         Mis à jour le <time datetime="2026-06-03">3 juin 2026</time>
@@ -706,7 +872,7 @@
     <li>
       <div>
         <h3>Entrez le code client <code>GE911</code> dans le champ de parrainage</h3>
-        <p>Dans le formulaire de commande, repérez le champ <strong>« Numéro de client EBOX de l'ami qui te réfère »</strong> et saisissez <code>GE911</code>. Le crédit de 25 $ apparaîtra sur votre 2e facture.</p>
+        <p>Dans le formulaire de commande, repérez le champ <strong>« Code — 25 $ pour toi et tes amis ! »</strong> et saisissez <code>GE911</code>. Le crédit de 25 $ apparaîtra sur votre 2e facture.</p>
       </div>
     </li>
     <li>
@@ -761,21 +927,33 @@
           <span class="section-label">Tutoriel rapide</span>
           <h2>Comment utiliser le code client GE911</h2>
 
+          <!-- MODIFICATION #3 : Warning amélioré avec libellé exact du champ + note dropdown -->
           <div class="warning">
             ⚠️ <strong>Règle importante :</strong> le code client EBOX doit être entré au moment de la commande initiale. Le service client d'EBOX n'autorise généralement pas l'ajout d'une référence une fois le compte créé.
+          </div>
+
+          <!-- AJOUT #3 : Encadré libellés exacts EBOX -->
+          <div class="field-exact">
+            <strong>🔍 Comment repérer le bon champ à l'écran</strong>
+            Le formulaire EBOX contient deux champs distincts — ne les confondez pas :
+            <ul style="margin: 10px 0 0 18px; color: var(--text-soft);">
+              <li style="margin-bottom:6px;"><strong>Case « Code Promo »</strong> — réservée aux codes marketing temporaires d'EBOX. Ne pas y inscrire GE911.</li>
+              <li style="margin-bottom:6px;"><strong>Champ <em>« Code — 25 $ pour toi et tes amis ! »</em></strong> (fr) / <em>"Code — $25 for you and your friends!"</em> (en) — c'est ici qu'il faut entrer <code>GE911</code>. Placeholder exact : <em>"Enter the client code of the friend who referred you"</em>.</li>
+            </ul>
+            <p style="margin-top:10px; margin-bottom:0; font-size:0.9rem;">Dans le menu déroulant <em>« Comment avez-vous entendu parler d'EBOX ? »</em>, sélectionnez <strong>« Ami ou famille »</strong> avant d'entrer le code.</p>
           </div>
 
           <ol class="steps">
             <li>
               <div>
                 <h3>Choisissez votre forfait Internet EBOX</h3>
-                <p>Rendez-vous sur le site d'EBOX et sélectionnez le forfait qui vous convient. EBOX propose des forfaits Internet résidentiels selon votre adresse et la technologie disponible.</p>
+                <p>Rendez-vous sur le site d'EBOX et sélectionnez le forfait qui vous convient. EBOX propose des forfaits Internet résidentiels selon votre adresse et la technologie disponible. <strong>Sans contrat, annulation sans pénalité.</strong></p>
               </div>
             </li>
              <li>
               <div>
                 <h3>Entrez le code client GE911</h3>
-                <p>Au moment de remplir le formulaire de commande, repérez spécifiquement le champ qui vous demande le <strong>numéro de client EBOX de l'ami qui te réfère</strong> et saisissez <code>GE911</code>. Attention à ne pas le confondre avec la case pour les codes promos généraux.</p>
+                <p>Au moment de remplir le formulaire de commande, repérez spécifiquement le champ <strong>« Code — 25 $ pour toi et tes amis ! »</strong> et saisissez <code>GE911</code>. Attention à ne pas le confondre avec la case pour les codes promos généraux.</p>
               </div>
             </li>
             <li>
@@ -820,7 +998,6 @@
     height="720"
     style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"
   >
-  <!-- Bouton Play -->
   <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
               width:72px;height:72px;background:rgba(176,49,45,0.92);
               border-radius:50%;display:flex;align-items:center;justify-content:center;
@@ -835,7 +1012,7 @@
 
           
           <div class="transparency">
-            <strong>Rappel visuel :</strong> Comme le montre la vidéo, ne confondez pas le champ « Code Promo » (en haut) avec le champ « Numéro de client de l'ami » (juste en dessous). Le code <code>GE911</code> doit être inscrit dans le <strong>deuxième champ</strong> pour activer le crédit de 25 $.
+            <strong>Rappel visuel :</strong> Comme le montre la vidéo, ne confondez pas le champ « Code Promo » (en haut) avec le champ <strong>« Code — 25 $ pour toi et tes amis ! »</strong> (juste en dessous). Le code <code>GE911</code> doit être inscrit dans le <strong>deuxième champ</strong> pour activer le crédit de 25 $.
           </div>
         </section>
         
@@ -846,6 +1023,7 @@
           <p><strong>La promotion de 50 $ est terminée.</strong> L'utilisation du code de parrainage <code>GE911</code> vous garantit d'obtenir le crédit de base standard en vigueur (25 $), appliqué directement sur votre facture, après la fin de l'offre promotionnelle qui a terminé le 31 mai 2026.</p>
         </section>
         
+        <!-- MODIFICATION #4 : Ajout "sans contrat" + "modem/routeur inclus" dans les facts -->
         <section id="details" aria-label="Informations techniques rapides">
           <span class="section-label">En bref</span>
           <h2>Informations utiles sur EBOX</h2>
@@ -857,6 +1035,14 @@
             <div class="fact">
               <strong>Validité</strong>
               <span>Le code GE911 est permanent et actif en 2026.</span>
+            </div>
+            <div class="fact">
+              <strong>Sans contrat</strong>
+              <span>Aucun engagement minimum. Annulation sans pénalité en tout temps.</span>
+            </div>
+            <div class="fact">
+              <strong>Équipement inclus</strong>
+              <span>Modem et routeur fournis gratuitement à l'installation — aucun frais de location caché.</span>
             </div>
             <div class="fact">
               <strong>Type de service</strong>
@@ -878,23 +1064,22 @@
             <p>Ce que j'apprécie particulièrement :</p>
             <ul>
               <li><strong>Fiabilité du réseau fibre :</strong> Les interruptions ont été rares dans mon cas, fortement appuyées par la solidité de l'infrastructure Bell sur laquelle EBOX opère.</li>
+              <li><strong>Aucun contrat :</strong> Liberté totale d'annuler sans pénalité — un avantage concret par rapport à Bell ou Vidéotron.</li>
               <li><strong>Facturation simple :</strong> Je n'ai pas eu de mauvaise surprise ou d'erreur de facturation.</li>
               <li><strong>Meilleure impression globale :</strong> À titre personnel, EBOX m'a donné une meilleure impression de stabilité que mon expérience passée avec Vidéotron.</li>
             </ul>
             <p>Si vous cherchez un fournisseur Internet simple, fiable et facile à recommander autour de vous, EBOX est une option que je trouve vraiment solide d'après ma propre expérience.</p>
-            <!-- ajout HP Instant Ink dans les liens internes -->
             <p style="margin-top: 20px; font-size: 0.95rem; border-top: 1px dashed var(--border); padding-top: 15px;">
               💡 En pleine optimisation de vos dépenses résidentielles ? Découvrez aussi mes guides et codes pour <a href="https://cashinstinct.github.io/stickermule/fr/">Sticker Mule</a>, pour vos comptes avec <a href="https://cashinstinct.github.io/tangerine-orange-key/">Tangerine</a>, ou pour votre encre d'imprimante avec <a href="https://cashinstinct.github.io/hp-instant-ink/">HP Instant Ink</a>.
             </p>
           </div>
         </section>
         
+        <!-- AJOUT #6 : id="english-summary" déjà présent, on ajoute juste la mention de la promo $100 EN et "sans contrat" -->
         <section id="english-summary" class="english-block" aria-label="English Summary">
           <h2>English Summary: EBOX Referral Code</h2>
-         <p>Searching for an <strong>EBOX referral code</strong> or <strong>EBOX client code</strong>? Use <code>GE911</code> during your checkout to get a <strong>$25 credit</strong> on your second bill. 
-             <!-- === DÉBUT PROMO $100 === -->
-           <strong>June 2026 bonus:</strong> new customers on the 500 Mbps or 1 Gbps Fibre plan also receive a <strong>$100 prepaid Mastercard</strong> (valid until June 17, 2026) — combinable with GE911. Enter GE911 in the "Friend's EBOX client number" field.</p>
-<!-- === FIN PROMO $100 === -->
+         <p>Searching for an <strong>EBOX referral code</strong> or <strong>EBOX client code</strong>? Use <code>GE911</code> during your checkout to get a <strong>$25 credit</strong> on your second bill. Enter it in the <em>"Code — $25 for you and your friends!"</em> field (not the promo code box).
+             <strong>June 2026 bonus:</strong> new customers on the 500 Mbps or 1 Gbps Fibre plan also receive a <strong>$100 prepaid Mastercard</strong> (valid until June 17, 2026) — combinable with GE911, for up to <strong>$125 in total savings</strong>. No contract, modem included.</p>
         </section>
 
         <section id="faq" aria-label="Foire aux questions">
@@ -913,7 +1098,6 @@
                 <p>Oui, le code GE911 est 100 % valide et testé en 2026. Cette page est mise à jour régulièrement pour garantir qu'il applique automatiquement le rabais de 25 $ disponible sur le système d'EBOX.</p>
               </div>
             </details>
-<!-- === DÉBUT FAQ PROMO $100 === -->
             <details>
   <summary>Y a-t-il une promotion EBOX en cours en juin 2026 ?</summary>
   <div class="faq-body">
@@ -926,12 +1110,17 @@
     <p>Oui, les deux avantages sont combinables. La carte prépayée de 100 $ s'applique automatiquement sur les forfaits Fibre 500 Mbps ou 1 Gbps, et le code <code>GE911</code> donne <strong>25 $ de crédit</strong> sur la 2e facture. Les deux ont été confirmés actifs lors d'une même commande.</p>
   </div>
 </details>
-<!-- === FIN FAQ PROMO $100 === -->
 
             <details>
               <summary>Où faut-il entrer le code client EBOX GE911 ?</summary>
               <div class="faq-body">
-                <p>Il faut entrer GE911 dans le champ affiché pendant l'inscription pour inscrire le numéro de client EBOX de la personne qui vous réfère.</p>
+                <p>Il faut entrer GE911 dans le champ <strong>« Code — 25 $ pour toi et tes amis ! »</strong> affiché pendant l'inscription — pas dans la case « Code Promo ». Dans le menu déroulant « Comment avez-vous entendu parler d'EBOX ? », sélectionnez <strong>« Ami ou famille »</strong> avant d'entrer le code.</p>
+              </div>
+            </details>
+            <details>
+              <summary>EBOX est-il sans contrat ?</summary>
+              <div class="faq-body">
+                <p>Oui. EBOX n'impose aucun contrat de durée minimale. Vous pouvez annuler en tout temps, sans pénalité. C'est un avantage concret par rapport à Bell ou Vidéotron qui peuvent exiger des engagements de 12 à 24 mois.</p>
               </div>
             </details>
             <details>
@@ -943,7 +1132,7 @@
             <details>
               <summary>Le code client EBOX et le code de référence, est-ce la même chose ?</summary>
               <div class="faq-body">
-                <p>Dans la pratique, beaucoup de gens parlent d'un code de référence EBOX. Sur l'écran d'inscription, EBOX demande surtout le <strong>numéro de client</strong> de la personne qui vous réfère. Ici, ce numéro est <code>GE911</code>.</p>
+                <p>Dans la pratique, beaucoup de gens parlent d'un code de référence EBOX. Sur l'écran d'inscription, EBOX demande surtout le <strong>numéro de client</strong> de la personne qui vous réfère dans le champ <em>« Code — 25 $ pour toi et tes amis ! »</em>. Ici, ce numéro est <code>GE911</code>.</p>
               </div>
             </details>
                        <details>
@@ -977,7 +1166,7 @@
                       </tr>
                       <tr>
                         <td>Où l'inscrire ?</td>
-                        <td>Champ « Numéro de client de l'ami »</td>
+                        <td>Champ « Code — 25 $ pour toi et tes amis ! »</td>
                         <td>Case « Code Promo »</td>
                       </tr>
                     </tbody>
@@ -991,7 +1180,7 @@
 
         <div class="cta-section">
           <h2>Prêt à commander votre accès Internet ?</h2>
-          <p>Cliquez ci-dessous, choisissez votre forfait Internet et entrez simplement le code <strong>GE911</strong> dans le champ de parrainage pendant votre inscription pour activer votre rabais de 25 $.</p>
+          <p>Cliquez ci-dessous, choisissez votre forfait Internet et entrez simplement le code <strong>GE911</strong> dans le champ <em>« Code — 25 $ pour toi et tes amis ! »</em> pendant votre inscription pour activer votre rabais de 25 $.</p>
           <a class="btn" href="https://www.ebox.ca/" target="_blank" rel="noopener noreferrer">
           🌐 Aller sur le site d'EBOX
           </a>    
@@ -1065,8 +1254,6 @@
       document.documentElement.setAttribute("data-theme", "dark");
       setThemeUI(true);
     } else {
-
-
       setThemeUI(false);
     }
 
@@ -1084,6 +1271,111 @@
       }
     });
   </script>
-  
+
+  <!-- AJOUT #2 + #5 : Compte à rebours + bloc conditionnel post-17 juin -->
+  <script>
+    (function() {
+      // Date d'expiration de la promo — 17 juin 2026 à 23:59:59 heure de Montréal (UTC-4 en été)
+      var PROMO_END = new Date('2026-06-17T23:59:59-04:00');
+
+      var cdDays  = document.getElementById('cd-days');
+      var cdHours = document.getElementById('cd-hours');
+      var cdMins  = document.getElementById('cd-mins');
+      var cdSecs  = document.getElementById('cd-secs');
+      var cdBar   = document.getElementById('countdown-bar');
+      var heroExpired  = document.getElementById('hero-expired-notice');
+      var postPromoBlock = document.getElementById('post-promo-block');
+
+      function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+      function tick() {
+        var now  = new Date();
+        var diff = PROMO_END - now;
+
+        if (diff <= 0) {
+          // Promo expirée : masquer le compte à rebours, afficher les blocs post-promo
+          if (cdBar)        cdBar.style.display = 'none';
+          if (heroExpired)  heroExpired.style.display = 'block';
+          if (postPromoBlock) postPromoBlock.style.display = 'block';
+          return; // stopper l'intervalle
+        }
+
+        var totalSecs = Math.floor(diff / 1000);
+        var days  = Math.floor(totalSecs / 86400);
+        var hours = Math.floor((totalSecs % 86400) / 3600);
+        var mins  = Math.floor((totalSecs % 3600) / 60);
+        var secs  = totalSecs % 60;
+
+        if (cdDays)  cdDays.textContent  = pad(days);
+        if (cdHours) cdHours.textContent = pad(hours);
+        if (cdMins)  cdMins.textContent  = pad(mins);
+        if (cdSecs)  cdSecs.textContent  = pad(secs);
+
+        setTimeout(tick, 1000);
+      }
+
+      tick();
+    })();
+  </script>
+
+  <!-- Sticky CTA mobile (#8) -->
+  <div class="sticky-mobile-cta" id="sticky-cta" role="region" aria-label="Code EBOX à copier">
+    <span class="s-code">GE911</span>
+    <button class="s-btn" id="sticky-copy-btn" type="button">Copier le code</button>
+  </div>
+
+  <script>
+    // #9 — Handler onerror centralisé (remplace les onerror inline)
+    document.querySelectorAll('img[data-fallback]').forEach(function(img) {
+      img.addEventListener('error', function() {
+        img.style.display = 'none';
+        var fallback = document.createElement('p');
+        fallback.className = 'img-fallback';
+        fallback.style.cssText = 'color:var(--muted);font-size:0.85rem;text-align:center;padding:12px;';
+        fallback.textContent = 'Capture d\'écran temporairement indisponible.';
+        img.insertAdjacentElement('afterend', fallback);
+      });
+    });
+
+    // #6 — aria-pressed dynamique sur theme-toggle (complément du JS existant)
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    })();
+
+    // #8 — Sticky CTA mobile : apparaît après le fold (scroll > 400px)
+    (function() {
+      var cta = document.getElementById('sticky-cta');
+      var btn = document.getElementById('sticky-copy-btn');
+      if (!cta || !btn) return;
+
+      var shown = false;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400 && !shown) {
+          cta.classList.add('visible');
+          shown = true;
+        } else if (window.scrollY <= 100 && shown) {
+          cta.classList.remove('visible');
+          shown = false;
+        }
+      }, { passive: true });
+
+      btn.addEventListener('click', function() {
+        navigator.clipboard.writeText('GE911').then(function() {
+          btn.textContent = 'Copié !';
+          btn.classList.add('copied');
+          setTimeout(function() {
+            btn.textContent = 'Copier le code';
+            btn.classList.remove('copied');
+          }, 2000);
+        }).catch(function() {
+          btn.textContent = 'GE911';
+        });
+      });
+    })();
+  </script>
+
 </body>
 </html>
